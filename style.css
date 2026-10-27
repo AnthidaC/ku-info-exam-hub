@@ -309,7 +309,7 @@ h3 {
 /* Question Option Item */
 .option-btn {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   text-align: left;
   background-color: var(--color-canvas);

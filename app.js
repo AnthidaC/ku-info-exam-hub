@@ -267,15 +267,15 @@ function renderCurrentQuestion() {
     if (optImg) {
       btn.innerHTML = `
         <span class="option-badge">${letterLabel}</span>
-        <div class="flex items-center gap-3 flex-grow text-left">
-          <img src="${optImg}" class="h-10 max-h-12 w-auto max-w-[120px] object-contain rounded bg-white p-1 border border-neutral-200 flex-shrink-0" alt="ตัวเลือก ${letterLabel}">
-          <span class="flex-grow">${formatAcademicText(optText)}</span>
+        <div class="flex items-center gap-2.5 sm:gap-3 flex-grow text-left min-w-0">
+          <img src="${optImg}" class="h-9 sm:h-11 w-auto max-w-[100px] sm:max-w-[130px] object-contain rounded bg-white p-0.5 border border-neutral-200/90 flex-shrink-0 shadow-xs" alt="ตัวเลือก ${letterLabel}">
+          <span class="flex-grow font-medium text-xs sm:text-sm text-[#1d1d1f] break-words">${formatAcademicText(optText)}</span>
         </div>
       `;
     } else {
       btn.innerHTML = `
         <span class="option-badge">${letterLabel}</span>
-        <span class="flex-grow">${formatAcademicText(optText)}</span>
+        <span class="flex-grow font-medium text-xs sm:text-sm text-[#1d1d1f] break-words">${formatAcademicText(optText)}</span>
       `;
     }
 
