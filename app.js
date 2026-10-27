@@ -12,8 +12,8 @@ let flaggedQuestions = new Set();
 let instantFeedback = false;
 let examSubmitted = false;
 
-// Timer State
-let timerTotalSeconds = 60 * 60; // 60 minutes default
+// Timer State (Default 2 Hours = 120 Minutes per university standard)
+let timerTotalSeconds = 120 * 60; // 120 minutes default (7,200 seconds)
 let timerRemainingSeconds = timerTotalSeconds;
 let timerInterval = null;
 let isTimerPaused = false;
@@ -63,16 +63,30 @@ function switchTab(tabName) {
   tabs.forEach(t => {
     const view = document.getElementById(`view-${t}`);
     const btn = document.getElementById(`tab-btn-${t}`);
+    const mobBtn = document.getElementById(`mob-nav-${t}`);
+    
     if (view && btn) {
       if (t === tabName) {
         view.classList.remove('hidden');
         btn.classList.add('active');
+        if (mobBtn) mobBtn.classList.add('active');
       } else {
         view.classList.add('hidden');
         btn.classList.remove('active');
+        if (mobBtn) mobBtn.classList.remove('active');
       }
     }
   });
+
+  // Toggle mobile floating exam bar
+  const mobBar = document.getElementById('mobile-exam-sticky-bar');
+  if (mobBar) {
+    if (tabName === 'exam') {
+      mobBar.classList.remove('hidden');
+    } else {
+      mobBar.classList.add('hidden');
+    }
+  }
 
   if (tabName === 'stats') {
     updateStatsDashboard();
@@ -306,11 +320,64 @@ function filterPalette(val) {
   renderPalette();
 }
 
-// Timer Functions
+// Mobile Palette Drawer Functions
+function openMobilePalette() {
+  const modal = document.getElementById('mobile-palette-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    renderMobilePalette();
+    if (window.lucide) lucide.createIcons();
+  }
+}
+
+function closeMobilePalette() {
+  const modal = document.getElementById('mobile-palette-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+}
+
+function renderMobilePalette() {
+  const grid = document.getElementById('mobile-palette-buttons-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const filterVal = document.getElementById('palette-category-filter')?.value || 'all';
+
+  activeQuestions.forEach((q, idx) => {
+    if (filterVal === 'flagged' && !flaggedQuestions.has(q.id)) return;
+    if (filterVal !== 'all' && filterVal !== 'flagged' && q.category !== filterVal) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'palette-btn';
+    btn.textContent = idx + 1;
+    btn.onclick = () => {
+      jumpToQuestion(idx);
+      closeMobilePalette();
+    };
+
+    if (idx === currentQIndex) btn.classList.add('current');
+    if (flaggedQuestions.has(q.id)) btn.classList.add('flagged');
+
+    if (userAnswers.hasOwnProperty(q.id)) {
+      if (examSubmitted || instantFeedback) {
+        if (userAnswers[q.id] === q.answer) {
+          btn.classList.add('correct');
+        } else {
+          btn.classList.add('wrong');
+        }
+      } else {
+        btn.classList.add('answered');
+      }
+    }
+    grid.appendChild(btn);
+  });
+}
+
+// Timer Functions (Flexible: 2 Hours default, or 90m, 60m, Untimed)
 function startTimer() {
   if (timerInterval) clearInterval(timerInterval);
   timerInterval = setInterval(() => {
-    if (!isTimerPaused && !examSubmitted) {
+    if (!isTimerPaused && !examSubmitted && timerTotalSeconds > 0) {
       if (timerRemainingSeconds > 0) {
         timerRemainingSeconds--;
         updateTimerDisplay();
@@ -324,14 +391,42 @@ function startTimer() {
 }
 
 function updateTimerDisplay() {
-  const m = Math.floor(timerRemainingSeconds / 60);
+  const timerEl = document.getElementById('exam-timer');
+  const mobTimerEl = document.getElementById('mob-timer');
+  if (!timerEl) return;
+
+  if (timerTotalSeconds === 0) {
+    timerEl.textContent = 'ไม่จำกัดเวลา';
+    if (mobTimerEl) mobTimerEl.textContent = 'ไม่จำกัด';
+    return;
+  }
+
+  const h = Math.floor(timerRemainingSeconds / 3600);
+  const m = Math.floor((timerRemainingSeconds % 3600) / 60);
   const s = timerRemainingSeconds % 60;
-  const timeStr = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-  document.getElementById('exam-timer').textContent = timeStr;
-  document.getElementById('mob-timer').textContent = timeStr;
+  
+  const timeStr = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  timerEl.textContent = timeStr;
+  if (mobTimerEl) mobTimerEl.textContent = timeStr;
+}
+
+function changeExamDuration(minutesVal) {
+  const mins = parseInt(minutesVal);
+  if (mins === 0) {
+    timerTotalSeconds = 0;
+    timerRemainingSeconds = 0;
+  } else {
+    timerTotalSeconds = mins * 60;
+    timerRemainingSeconds = timerTotalSeconds;
+  }
+  isTimerPaused = false;
+  const txt = document.getElementById('timer-toggle-text');
+  if (txt) txt.textContent = 'หยุดเวลา';
+  updateTimerDisplay();
 }
 
 function toggleExamTimer() {
+  if (timerTotalSeconds === 0) return; // Untimed mode
   isTimerPaused = !isTimerPaused;
   const btn = document.getElementById('btn-timer-toggle');
   const txt = document.getElementById('timer-toggle-text');
