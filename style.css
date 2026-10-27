@@ -106,6 +106,12 @@ h3 {
   z-index: 50;
 }
 
+@media (max-width: 639px) {
+  .apple-nav-global {
+    display: none !important;
+  }
+}
+
 @media (min-width: 640px) {
   .apple-nav-global {
     padding: 0 24px;
@@ -575,23 +581,24 @@ h3 {
   font-weight: 700;
 }
 
-/* Mobile Sticky Bottom Action Bar during exam */
+/* Mobile Sticky Bottom Action Bar during exam - Flush Dock at bottom: 0 */
 .mobile-sticky-footer {
   position: fixed;
-  bottom: 60px; /* Sits right above mobile bottom nav */
-  left: 12px;
-  right: 12px;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-pill);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid var(--color-hairline);
+  border-radius: 0;
   padding: 8px 16px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  z-index: 40;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 46;
 }
 
 @media (min-width: 768px) {

@@ -145,14 +145,15 @@ function switchTab(tabName) {
   // Update mobile header switch button & badge
   updateMobileHeaderNav(tabName);
 
-  // Toggle mobile floating exam bar
+  // Toggle mobile bottom dock vs mobile bottom navigation (prevents double bottom bars!)
   const mobBar = document.getElementById('mobile-exam-sticky-bar');
-  if (mobBar) {
-    if (tabName === 'exam') {
-      mobBar.classList.remove('hidden');
-    } else {
-      mobBar.classList.add('hidden');
-    }
+  const mobBottomNav = document.querySelector('.mobile-bottom-nav');
+  if (tabName === 'exam') {
+    if (mobBar) mobBar.classList.remove('hidden');
+    if (mobBottomNav) mobBottomNav.style.display = 'none';
+  } else {
+    if (mobBar) mobBar.classList.add('hidden');
+    if (mobBottomNav) mobBottomNav.style.display = 'flex';
   }
 
   if (tabName === 'stats') {
@@ -233,6 +234,19 @@ function renderCurrentQuestion() {
   // Question Text
   document.getElementById('q-text').textContent = q.question;
 
+  // Question Image Handling
+  const imgContainer = document.getElementById('q-image-container');
+  const imgElem = document.getElementById('q-image');
+  if (imgContainer && imgElem) {
+    if (q.image) {
+      imgElem.src = q.image;
+      imgContainer.classList.remove('hidden');
+    } else {
+      imgContainer.classList.add('hidden');
+      imgElem.src = '';
+    }
+  }
+
   // Options
   const container = document.getElementById('options-container');
   container.innerHTML = '';
@@ -271,11 +285,25 @@ function renderCurrentQuestion() {
   // Explanation Container
   const expBox = document.getElementById('explanation-container');
   const expText = document.getElementById('q-explanation-text');
+  const expSlideBox = document.getElementById('exp-slide-box');
+  const expSlideImg = document.getElementById('exp-slide-img');
+
   if (examSubmitted || (instantFeedback && isAnswered)) {
     expText.textContent = q.explanation || 'ไม่มีคำอธิบายเพิ่มเติมสำหรับข้อนี้';
     expBox.classList.remove('hidden');
+
+    if (expSlideBox && expSlideImg) {
+      if (q.slideImage) {
+        expSlideImg.src = q.slideImage;
+        expSlideBox.classList.remove('hidden');
+      } else {
+        expSlideBox.classList.add('hidden');
+        expSlideImg.src = '';
+      }
+    }
   } else {
     expBox.classList.add('hidden');
+    if (expSlideBox) expSlideBox.classList.add('hidden');
   }
 
   // Prev / Next button states
@@ -315,12 +343,23 @@ function clearCurrentAnswer() {
   renderPalette();
 }
 
+function scrollToQuestionCard() {
+  const qCard = document.getElementById('question-card');
+  if (qCard) {
+    const yOffset = -70; // Header offset
+    const y = qCard.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
 function navigateQuestion(delta) {
   const nextIdx = currentQIndex + delta;
   if (nextIdx >= 0 && nextIdx < activeQuestions.length) {
     currentQIndex = nextIdx;
     renderCurrentQuestion();
-    window.scrollTo({ top: 120, behavior: 'smooth' });
+    scrollToQuestionCard();
   }
 }
 
@@ -328,7 +367,25 @@ function jumpToQuestion(idx) {
   if (idx >= 0 && idx < activeQuestions.length) {
     currentQIndex = idx;
     renderCurrentQuestion();
-    window.scrollTo({ top: 120, behavior: 'smooth' });
+    scrollToQuestionCard();
+  }
+}
+
+function openLightbox(src) {
+  const box = document.getElementById('image-lightbox');
+  const img = document.getElementById('lightbox-img');
+  if (box && img) {
+    img.src = src;
+    box.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeLightbox() {
+  const box = document.getElementById('image-lightbox');
+  if (box) {
+    box.classList.add('hidden');
+    document.body.style.overflow = '';
   }
 }
 

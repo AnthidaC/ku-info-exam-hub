@@ -33,7 +33,7 @@
     </div>
     <div class="flex items-center gap-3 text-xs text-neutral-300">
       <span id="global-stats-pill" class="bg-neutral-800 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-neutral-300 border border-neutral-700 text-[11px] sm:text-xs">
-        105 ข้อสอบครบทุกบท
+        106 ข้อสอบครบทุกบท
       </span>
       <a href="https://github.com/AnthidaC/ku-info-exam-hub" id="repo-link" target="_blank" class="hover:text-white transition-colors flex items-center gap-1">
         <i data-lucide="github" class="w-3.5 h-3.5"></i>
@@ -119,8 +119,8 @@
          ======================================================================= -->
     <section id="view-exam" class="tab-view block">
       
-      <!-- Quick Switch Banner (Mobile/Tablet Friendly) -->
-      <div class="bg-blue-50/90 border border-blue-200/80 rounded-2xl p-3 sm:p-4 mb-4 flex items-center justify-between gap-3 text-xs sm:text-sm">
+      <!-- Quick Switch Banner (Desktop/Tablet only, hidden on mobile for clean layout) -->
+      <div class="hidden sm:flex bg-blue-50/90 border border-blue-200/80 rounded-2xl p-3 sm:p-4 mb-4 items-center justify-between gap-3 text-xs sm:text-sm">
         <div class="flex items-center gap-2.5 text-blue-900 font-medium">
           <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-[#0066cc]">
             <i data-lucide="book-open" class="w-4 h-4"></i>
@@ -164,7 +164,7 @@
           <!-- Mobile Only Palette Trigger Button -->
           <button onclick="openMobilePalette()" class="lg:hidden btn-apple-ghost text-xs py-1.5 px-3 bg-blue-50 text-[#0066cc] border-blue-200 font-semibold">
             <i data-lucide="grid" class="w-3.5 h-3.5"></i>
-            <span>แผง 105 ข้อ</span>
+            <span>แผง 106 ข้อ</span>
           </button>
 
           <button onclick="toggleExamTimer()" id="btn-timer-toggle" class="btn-apple-ghost text-xs py-1.5 px-3">
@@ -208,15 +208,23 @@
                   <span id="flag-text" class="hidden sm:inline">ทำเครื่องหมายไว้ทบทวน</span>
                   <span class="sm:hidden">ปักหมุด</span>
                 </button>
-                <span id="q-progress-indicator" class="text-xs sm:text-sm font-semibold text-neutral-400">ข้อ 1 / 105</span>
+                <span id="q-progress-indicator" class="text-xs sm:text-sm font-semibold text-neutral-400">ข้อ 1 / 106</span>
               </div>
             </div>
 
             <!-- Question Body -->
-            <div class="mb-5 sm:mb-6">
+            <div class="mb-4 sm:mb-5">
               <h2 id="q-text" class="text-lg sm:text-xl md:text-2xl font-bold text-[#1d1d1f] leading-snug">
                 กำลังโหลดคำถาม...
               </h2>
+            </div>
+
+            <!-- Question Image Container (Shows for questions with diagrams, logos, book covers) -->
+            <div id="q-image-container" class="hidden mb-5 text-center">
+              <div class="relative inline-block max-w-full">
+                <img id="q-image" src="" alt="ภาพประกอบข้อสอบ" class="rounded-xl border border-neutral-200/90 max-h-72 sm:max-h-80 mx-auto shadow-sm cursor-zoom-in object-contain bg-white hover:opacity-95 transition-opacity" onclick="openLightbox(this.src)">
+                <span class="block text-[11px] text-neutral-400 mt-1 font-medium">🔍 แตะที่ภาพเพื่อซูมดูขนาดเต็ม</span>
+              </div>
             </div>
 
             <!-- Options Container -->
@@ -230,9 +238,20 @@
                 <i data-lucide="info" class="w-4 h-4"></i>
                 <span>คำอธิบายและหลักเกณฑ์ (Explanation)</span>
               </div>
-              <p id="q-explanation-text" class="text-[#333333] text-xs sm:text-sm leading-relaxed">
+              <p id="q-explanation-text" class="text-[#333333] text-xs sm:text-sm leading-relaxed whitespace-pre-line">
                 คำอธิบายจะปรากฏที่นี่
               </p>
+              <!-- Slide reference verification image -->
+              <div id="exp-slide-box" class="hidden mt-3 pt-3 border-t border-blue-100 text-left">
+                <p class="text-xs font-bold text-neutral-700 mb-1.5 flex items-center gap-1.5">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>ภาพสไลด์ข้อสอบจริงจากห้องเรียน (หลักฐานยืนยันคำตอบ):</span>
+                </p>
+                <div class="text-center">
+                  <img id="exp-slide-img" src="" alt="สไลด์ข้อสอบจริง" class="rounded-lg border border-neutral-200 max-h-60 mx-auto shadow-sm cursor-zoom-in object-contain bg-white" onclick="openLightbox(this.src)">
+                  <span class="block text-[10px] text-neutral-400 mt-0.5">แตะเพื่อดูภาพสไลด์ขนาดใหญ่</span>
+                </div>
+              </div>
             </div>
 
             <!-- Question Footer Buttons -->
@@ -260,7 +279,7 @@
             <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#e5e7eb]">
               <h3 class="font-bold text-sm sm:text-base flex items-center gap-2">
                 <i data-lucide="grid" class="w-4 h-4 text-[#0066cc]"></i>
-                <span>แผงข้อสอบ (Palette 105 ข้อ)</span>
+                <span>แผงข้อสอบ (Palette 106 ข้อ)</span>
               </h3>
               <div class="text-xs text-neutral-400">
                 คลิกเพื่อข้ามข้อ
@@ -286,7 +305,7 @@
             <!-- Filter Categories in Palette -->
             <div class="mb-3">
               <select id="palette-category-filter" onchange="filterPalette(this.value)" class="w-full text-xs p-2 rounded-lg bg-neutral-50 border border-neutral-200 text-neutral-700 focus:outline-none focus:ring-1 focus:ring-[#0066cc]">
-                <option value="all">แสดงทุกหมวด (105 ข้อ)</option>
+                <option value="all">แสดงทุกหมวด (106 ข้อ)</option>
                 <option value="bib">บรรณานุกรมและการอ้างอิง (27 ข้อ)</option>
                 <option value="search">การสืบค้นและการประเมิน (23 ข้อ)</option>
                 <option value="ethics">จริยธรรมและกฎหมายคอมฯ (18 ข้อ)</option>
@@ -424,7 +443,7 @@
           <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-[#0066cc]">
             <i data-lucide="target" class="w-4 h-4"></i>
           </div>
-          <span>ทบทวนเนื้อหาพร้อมแล้ว? พร้อมลุยทำข้อสอบ 105 ข้อ</span>
+          <span>ทบทวนเนื้อหาพร้อมแล้ว? พร้อมลุยทำข้อสอบ 106 ข้อ</span>
         </div>
         <button onclick="switchTab('exam')" class="btn-apple-primary text-xs py-1.5 px-3 whitespace-nowrap shadow-xs flex-shrink-0">
           <span>ไปทำข้อสอบทันที &rarr;</span>
@@ -572,7 +591,7 @@
               <i data-lucide="target" class="w-5 h-5"></i>
             </div>
             <div>
-              <div class="font-bold text-sm text-neutral-900">จำลองห้องสอบจริง (105 ข้อ)</div>
+              <div class="font-bold text-sm text-neutral-900">จำลองห้องสอบจริง (106 ข้อ)</div>
               <div class="text-xs text-neutral-500">จับเวลา 2 ชม. ข้อสอบครบทุกชุดพร้อมเฉลยละเอียด</div>
             </div>
           </div>
@@ -642,7 +661,7 @@
     <div class="flex items-center gap-2">
       <button onclick="openMobilePalette()" class="text-xs px-2.5 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 font-bold flex items-center gap-1">
         <i data-lucide="grid" class="w-3 h-3"></i>
-        <span>ข้อ <span id="mob-q-num">1</span>/105</span>
+        <span>ข้อ <span id="mob-q-num">1</span>/106</span>
       </button>
       <span id="mob-timer" class="text-xs font-bold text-neutral-800 font-mono">02:00:00</span>
     </div>
@@ -665,7 +684,7 @@
       <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-200">
         <h3 class="font-bold text-base flex items-center gap-2">
           <i data-lucide="grid" class="w-4 h-4 text-[#0066cc]"></i>
-          <span>แผงข้อสอบทั้งหมด (105 ข้อ)</span>
+          <span>แผงข้อสอบทั้งหมด (106 ข้อ)</span>
         </h3>
         <button onclick="closeMobilePalette()" class="p-1 rounded-full hover:bg-neutral-100 text-neutral-500">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -735,6 +754,13 @@
         </button>
       </div>
     </div>
+  </div>
+
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div id="image-lightbox" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex flex-col items-center justify-center p-3 select-none" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-neutral-300 p-2 text-2xl font-bold bg-neutral-800/80 hover:bg-neutral-700 rounded-full w-10 h-10 flex items-center justify-center transition-colors">&times;</button>
+    <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl transition-transform" onclick="event.stopPropagation()">
+    <p class="text-neutral-300 text-xs mt-3 font-medium">แตะบริเวณใดก็ได้เพื่อปิด</p>
   </div>
 
   <!-- Scripts -->
