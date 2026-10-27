@@ -285,25 +285,12 @@ function renderCurrentQuestion() {
   // Explanation Container
   const expBox = document.getElementById('explanation-container');
   const expText = document.getElementById('q-explanation-text');
-  const expSlideBox = document.getElementById('exp-slide-box');
-  const expSlideImg = document.getElementById('exp-slide-img');
 
   if (examSubmitted || (instantFeedback && isAnswered)) {
     expText.textContent = q.explanation || 'ไม่มีคำอธิบายเพิ่มเติมสำหรับข้อนี้';
     expBox.classList.remove('hidden');
-
-    if (expSlideBox && expSlideImg) {
-      if (q.slideImage) {
-        expSlideImg.src = q.slideImage;
-        expSlideBox.classList.remove('hidden');
-      } else {
-        expSlideBox.classList.add('hidden');
-        expSlideImg.src = '';
-      }
-    }
   } else {
     expBox.classList.add('hidden');
-    if (expSlideBox) expSlideBox.classList.add('hidden');
   }
 
   // Prev / Next button states

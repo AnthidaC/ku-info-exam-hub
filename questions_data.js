@@ -12,9 +12,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "ตามมาตรฐาน APA Style 7th Edition ในการเขียนรายการบรรณานุกรมท้ายเล่ม (Reference List) ผู้แต่งชาวต่างประเทศทุกคนจะต้องกลับชื่อสกุล (Surname) ขึ้นก่อนเสมอ คั่นชื่อแต่ละคนด้วยเครื่องหมายจุลภาค (,) และใส่เครื่องหมายจุลภาคหน้าเครื่องหมายแอมเพอร์แซนด์ (&) ดังนั้นข้อที่ถูกต้องคือ: White, A., Handler, P., & Smith, E.L. 2015",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_1_clean.jpg",
-    "slideImage": "assets/exam_images/slide_1_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 2,
@@ -29,9 +27,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "เมื่อบรรณาธิการไม่ได้อยู่ในตำแหน่งผู้รับผิดชอบหลักของเอกสาร (เช่น การอ้างอิงบทความหรือส่วนย่อยในหนังสือรวมเรื่อง In ... (Eds.)): ชื่อบรรณาธิการจะไม่กลับชื่อสกุล โดยใช้ 'อักษรย่อชื่อต้น ตามด้วยชื่อสกุล' (P. Handler & E.L. Smith) เชื่อมด้วยเครื่องหมาย & และมีคำว่า (Eds.). สำหรับบรรณาธิการหลายคน (หรือ (Ed.). สำหรับบรรณาธิการคนเดียว) โดยมีเครื่องหมายจุดหลังวงเล็บ",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_2_clean.jpg",
-    "slideImage": "assets/exam_images/slide_2_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 3,
@@ -46,9 +42,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "ตามหลักเกณฑ์การลงรายการบรรณานุกรม (APA Style) สำหรับผู้แต่งชาวต่างประเทศ ให้กลับเอาชื่อสกุล (Last Name/Surname) ขึ้นก่อน แล้วตามด้วยเครื่องหมายจุลภาค (,) จากนั้นตามด้วยอักษรย่อของชื่อต้น (First Name) และชื่อกลาง (Middle Name) คั่นด้วยจุด ดังนั้น 'Dickinson Woodruff Richards' ซึ่ง Richards เป็นนามสกุล จึงเขียนเป็น 'Richards, D. W.'",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_3_clean.jpg",
-    "slideImage": "assets/exam_images/slide_3_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 4,
@@ -63,9 +57,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 2,
     "explanation": "ในการอ้างอิงแทรกในเนื้อหา (In-text citation) ภาษาไทย: 1) ต้องตัดคำนำหน้านาม ตำแหน่งทางวิชาการ (รศ., ผศ., ศ., ดร.) หรือยศออกทั้งหมด 2) เมื่อมีผู้แต่งตั้งแต่ 3 หรือ 4 คนขึ้นไป ให้ลงชื่อผู้แต่งคนแรกแล้วตามด้วยคำว่า 'และคณะ' ตามด้วยปีพิมพ์ ดังนั้นจึงตัด 'รศ.' ออก เหลือ 'กนกอร แตงไทย และคณะ 2560'",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_4_clean.jpg",
-    "slideImage": "assets/exam_images/slide_4_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 5,
@@ -80,9 +72,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 1,
     "explanation": "ตามหลักเกณฑ์การเขียนบรรณานุกรม (APA Style และหลักมาตรฐานทั่วไป) หากแหล่งข้อมูลไม่ปรากฏชื่อผู้แต่งหรือผู้รับผิดชอบ ให้เลื่อน 'ชื่อเรื่องของเอกสารนั้น' (Title of the work) มาใส่ในตำแหน่งของผู้แต่งแทน โดยจะไม่ใช้นิรนาม/Anonymous เว้นแต่เอกสารจะระบุว่านิรนามอย่างชัดเจน และ ม.ป.ป./n.d. จะใช้เมื่อไม่ปรากฏปีพิมพ์เท่านั้น",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_5_clean.jpg",
-    "slideImage": "assets/exam_images/slide_5_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 6,
@@ -97,9 +87,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "ในการอ้างอิงแทรกในเนื้อหา (In-text citation) สำหรับภาษาไทย: 1) ตัดคำนำหน้านาม (นาย, นาง, นางสาว) ออก 2) ตัดคำแสดงบทบาท/หน้าที่ เช่น บรรณาธิการ หรือ บ.ก. ออก 3) ภาษาไทยต้องใช้คำเชื่อมว่า 'และ' โดยไม่ใช้สัญลักษณ์ '&' (สัญลักษณ์ & ใช้กับภาษาต่างประเทศหรือในวงเล็บของภาษาอังกฤษ) จึงได้เป็น 'เจษฎา เขียวแย้ม และอมรสาย เกิดแก้ว'",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_6_clean.jpg",
-    "slideImage": "assets/exam_images/slide_6_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 7,
@@ -114,9 +102,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 2,
     "explanation": "สำหรับการอ้างอิงแทรกในเนื้อหา (In-text citation) ของเอกสารที่มีผู้แต่งชาวต่างชาติตั้งแต่ 3 คนขึ้นไป ตามมาตรฐาน APA 7th Edition (หรือการอ้างอิงครั้งที่ 2 เป็นต้นไปใน APA 6th Edition) ให้ระบุเฉพาะชื่อสกุลของผู้แต่งคนแรกตามด้วย 'et al.' (ตัวเอียงหรือตัวตรงตามคู่มือ) แล้วตามด้วยปีพิมพ์ จึงเขียนเป็น 'White et al. 2015'",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_7_clean.jpg",
-    "slideImage": "assets/exam_images/slide_7_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 8,
@@ -131,9 +117,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "ในการอ้างอิงแทรกในเนื้อหาแบบเน้นข้อความในวงเล็บ (Parenthetical citation) ครั้งแรก สำหรับผู้แต่งที่เป็นหน่วยงาน/องค์กรที่มีชื่อย่อ เมื่ออยู่ในวงเล็บหลัก จะต้องใส่อักษรย่อของหน่วยงานไว้ในวงเล็บเหลี่ยม [...] เพื่อไม่ให้เกิดวงเล็บโค้งซ้อนวงเล็บโค้ง แล้วคั่นด้วยเครื่องหมายจุลภาคตามด้วยปีพิมพ์ คือ (กระทรวงพลังงาน [พน.], 2567)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_8_clean.jpg",
-    "slideImage": "assets/exam_images/slide_8_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 9,
@@ -148,9 +132,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 2,
     "explanation": "ตามหลัก APA 7th เมื่อระบุชื่อเต็มพร้อมชื่อย่อในวงเล็บเหลี่ยมในการอ้างอิงครั้งแรกไปแล้ว เช่น (กระทรวงพลังงาน [พน.], 2567) ในการอ้างอิงครั้งถัดไปในงานชิ้นเดียวกัน ให้ใช้เฉพาะชื่อย่อได้ทันที โดยหากอ้างแบบบรรยายจะเป็น 'พน. (2567)' และหากอ้างในวงเล็บจะเป็น '(พน., 2567)'",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_9_clean.jpg",
-    "slideImage": "assets/exam_images/slide_9_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 10,
@@ -165,9 +147,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "THAIJO (Thai Journals Online) เป็นระบบฐานข้อมูลวารสารอิเล็กทรอนิกส์กลางของประเทศไทยที่รวบรวมวารสารวิชาการที่ตีพิมพ์ในประเทศไทยทุกสาขาวิชา จัดการโดย TCI (ศูนย์ดัชนีการอ้างอิงวารสารไทย) ในขณะที่ UpToDate เป็นฐานข้อมูลการแพทย์ และ Passport GMID เป็นฐานข้อมูลข้อมูลการตลาดและสถิติธุรกิจระดับโลก",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_10_clean.jpg",
-    "slideImage": "assets/exam_images/slide_10_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 11,
@@ -182,9 +162,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 2,
     "explanation": "CEIC (CEIC Data) เป็นฐานข้อมูลสถิติและข้อมูลเชิงลึกทางเศรษฐกิจ มหภาค การเงิน และตลาดทุนที่ครอบคลุมประเทศต่างๆ ทั่วโลก (Complete Anatomy คือโมเดลกายวิภาค 3 มิติ, CINAHL คือการพยาบาลและสหเวชศาสตร์, DOAB คือหนังสือ Open Access)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_11_clean.jpg",
-    "slideImage": "assets/exam_images/slide_11_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 12,
@@ -199,9 +177,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 2,
     "explanation": "Stash (Stash Media) เป็นฐานข้อมูลและวิดีโออาร์ไคฟ์ออนไลน์ที่รวบรวมผลงาน visual effects, motion design และ animation projects จากนักออกแบบ ศิลปิน และสตูดิโอชั้นนำทั่วโลก (DynamicHealth เป็นฐานข้อมูลสุขภาพ/การพยาบาล, USP คือ Pharmacopeia มาตรฐานยา)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_12_clean.jpg",
-    "slideImage": "assets/exam_images/slide_12_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 13,
@@ -216,9 +192,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 1,
     "explanation": "WGSN (Worth Global Style Network) เป็นฐานข้อมูลพยากรณ์เทรนด์แฟชั่น การออกแบบ ไลฟ์สไตล์ และผู้บริโภค ไม่ใช่ฐานข้อมูลสำหรับค้นหาวิทยานิพนธ์ (ในขณะที่ EBSCO Open Dissertations, TDC ThaiLIS, และ KU E-Thesis ล้วนเป็นฐานข้อมูลวิทยานิพนธ์โดยตรง)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_13_clean.jpg",
-    "slideImage": "assets/exam_images/slide_13_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 14,
@@ -233,9 +207,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "IEEE Xplore Digital Library เป็นฐานข้อมูลงานวิจัยชั้นนำระดับโลกด้านวิศวกรรมศาสตร์ โดยเฉพาะวิศวกรรมไฟฟ้า อิเล็กทรอนิกส์ คอมพิวเตอร์ และเทคโนโลยี (UpToDate และ PubMed เป็นฐานข้อมูลการแพทย์, EconLit เป็นฐานข้อมูลเศรษฐศาสตร์)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_14_clean.jpg",
-    "slideImage": "assets/exam_images/slide_14_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 15,
@@ -250,9 +222,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "ERIC (Education Resources Information Center) ดำเนินการโดย Institute of Education Sciences สหรัฐอเมริกา เป็นฐานข้อมูลด้านการศึกษา การเรียนการสอน และศึกษาศาสตร์/ครุศาสตร์ที่ใหญ่ที่สุด (EMIS เป็นด้านตลาดเกิดใหม่และเศรษฐกิจการลงทุน, WGSN เป็นด้านเทรนด์แฟชั่น, TCDC MATERIAL DATABASE เป็นฐานข้อมูลวัสดุการออกแบบ)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_15_clean.jpg",
-    "slideImage": "assets/exam_images/slide_15_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 16,
@@ -267,9 +237,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "ASM Journals (American Society for Microbiology) เป็นฐานข้อมูลวารสารด้านจุลชีววิทยาและวิทยาศาสตร์การแพทย์ จึงไม่เกี่ยวข้องกับด้านการจัดการ บริหาร เศรษฐศาสตร์ หรือการตลาด (ส่วน Emerald มีชื่อเสียงและเน้นหนักด้านการจัดการ บริหารธุรกิจ และการตลาด)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_16_clean.jpg",
-    "slideImage": "assets/exam_images/slide_16_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 17,
@@ -284,9 +252,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "National Geographic Virtual Library (โดยสำนักพิมพ์ Gale) เป็นฐานข้อมูลที่รวบรวมนิตยสาร National Geographic ย้อนหลังตั้งแต่ปี ค.ศ. 1888 จนถึงปัจจุบัน ตลอดจนหนังสือ แผนที่ รูปภาพ และวิดีโอทั้งหมดของสมาคม National Geographic Society",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_17_clean.jpg",
-    "slideImage": "assets/exam_images/slide_17_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 18,
@@ -301,9 +267,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 1,
     "explanation": "Hibrary (ไฮบรารี่) เป็นแพลตฟอร์มและฐานข้อมูลหนังสืออิเล็กทรอนิกส์ (E-Book) ภาษาไทย สำหรับห้องสมุดสถาบันอุดมศึกษาและองค์กรต่างๆ ครอบคลุมหนังสือภาษาไทยหลากหลายสาขาวิชา (NEJM Evidence ด้านการแพทย์, Oxford Scholarship ด้านวิชาการภาษาอังกฤษ, Material ConneXion ด้านนวัตกรรมวัสดุ)",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_18_clean.jpg",
-    "slideImage": "assets/exam_images/slide_18_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 19,
@@ -318,9 +282,7 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "Osmosis from Elsevier เป็นแพลตฟอร์มการเรียนรู้ทางการแพทย์ที่ออกแบบมาสำหรับหลักสูตรแพทยศาสตร์บัณฑิตโดยเฉพาะ ครอบคลุมเนื้อหารายวิชาทั้งชั้นปรีคลินิก (Basic Medical Sciences เช่น Anatomy, Physiology, Pathology, Pharmacology) และชั้นคลินิก (Clinical Sciences/Rotations) ผ่านวิดีโอแอนิเมชัน แฟลชการ์ด และข้อสอบแบบจำลอง",
-    "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/slide_19_clean.jpg",
-    "slideImage": "assets/exam_images/slide_19_screen.jpg"
+    "tag": "แนวข้อสอบในห้องเรียน"
   },
   {
     "id": 20,
@@ -636,7 +598,7 @@ window.EXAM_QUESTIONS = [
     "answer": 1,
     "explanation": "จากกราฟความสัมพันธ์ระหว่างจำนวนสินค้า (แกนนอน) และราคาต่อหน่วย (แกนตั้ง) จุดต่ำสุดของเส้นกราฟต้นทุน (Minimum Point) อยู่ที่ระดับการผลิต 350 ชิ้น โดยมีราคาต่อหน่วยต่ำที่สุด (ประมาณ 100 บาท/หน่วย)",
     "tag": "กิจกรรมหลังเรียน",
-    "image": "assets/exam_images/q40_cost_graph.png"
+    "image": "assets/exam_images/q40_clean_graph.png"
   },
   {
     "id": 41,
