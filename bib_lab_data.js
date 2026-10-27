@@ -224,6 +224,96 @@ window.BIB_LAB_DATA = {
         "p5"
       ],
       "explanation": "โครงสร้าง: ผู้เขียน. (ปี, วันที่ เดือน). ชื่อเรื่อง. ชื่อเว็บไซต์. URL"
+    },
+    {
+      "id": "order_7",
+      "title": "บทความวารสารภาษาอังกฤษ (Journal Article - English)",
+      "description": "เรียงลำดับส่วนประกอบบทความวารสารภาษาอังกฤษของ 'Singh, M. K., & Anjali, K.' ตาม APA 7th",
+      "pieces": [
+        {
+          "id": "p1",
+          "text": "Singh, M. K., & Anjali, K."
+        },
+        {
+          "id": "p2",
+          "text": "(2022)."
+        },
+        {
+          "id": "p3",
+          "text": "Mathematical modeling and stability analysis of Seqiahr model."
+        },
+        {
+          "id": "p4",
+          "text": "*Applications and Applied Mathematics: An International Journal*,"
+        },
+        {
+          "id": "p5",
+          "text": "*17*(1),"
+        },
+        {
+          "id": "p6",
+          "text": "146–171."
+        },
+        {
+          "id": "p7",
+          "text": "https://doi.org/10.1504/AAM.2022.100456"
+        }
+      ],
+      "correct_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "explanation": "โครงสร้างบทความวารสารภาษาอังกฤษ: Author(s). (Year). Article title. *Journal Title*, *Volume*(Issue), Pages. DOI"
+    },
+    {
+      "id": "order_8",
+      "title": "บทความในหนังสือรวมเรื่องภาษาอังกฤษ (Edited Book Chapter - English)",
+      "description": "เรียงลำดับส่วนประกอบบทความในหนังสือรวมเรื่องของ 'Bornstein, M. H.'",
+      "pieces": [
+        {
+          "id": "p1",
+          "text": "Bornstein, M. H."
+        },
+        {
+          "id": "p2",
+          "text": "(2003)."
+        },
+        {
+          "id": "p3",
+          "text": "Positive parenting and positive child development."
+        },
+        {
+          "id": "p4",
+          "text": "In M. H. Bornstein (Ed.),"
+        },
+        {
+          "id": "p5",
+          "text": "*Well-being: Positive development across the life course*"
+        },
+        {
+          "id": "p6",
+          "text": "(pp. 29–82)."
+        },
+        {
+          "id": "p7",
+          "text": "Lawrence Erlbaum Associates."
+        }
+      ],
+      "correct_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "explanation": "โครงสร้างบทความในหนังสือรวมเรื่อง: Author. (Year). Chapter title. In Editor (Ed.), *Book title* (pp. Pages). Publisher."
     }
   ],
   "spot_mistakes": [
