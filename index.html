@@ -374,13 +374,27 @@
         <div class="apple-card">
           <div class="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200 flex-wrap gap-2">
             <div>
-              <span id="order-step-badge" class="badge-tag">แบบฝึกหัดที่ 1 / 6</span>
+              <span id="order-step-badge" class="badge-tag">แบบฝึกหัดที่ 1 / 8</span>
               <h2 id="order-title" class="text-lg sm:text-xl font-bold mt-1 text-[#1d1d1f]">กำลังโหลดแบบฝึกหัด...</h2>
               <p id="order-desc" class="text-xs sm:text-sm text-neutral-500 mt-0.5">แตะหรือคลิกส่วนประกอบเพื่อจัดเรียงตามลำดับที่ถูกต้อง</p>
             </div>
             <div class="flex items-center gap-2">
               <button onclick="nextOrderingChallenge(-1)" class="btn-apple-ghost text-xs py-1.5 px-3">ก่อนหน้า</button>
               <button onclick="nextOrderingChallenge(1)" class="btn-apple-ghost text-xs py-1.5 px-3">ถัดไป</button>
+            </div>
+          </div>
+
+          <!-- Live Assembled Citation Preview -->
+          <div class="mb-4 p-3.5 sm:p-4 rounded-xl bg-blue-50/70 border border-blue-200/60">
+            <div class="flex items-center justify-between text-xs font-semibold text-blue-900 mb-1.5">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-blue-600"></i>
+                <span>บรรณานุกรมที่ประกอบขณะนี้ (Live Preview):</span>
+              </span>
+              <span id="order-selected-count" class="text-[11px] font-normal text-blue-700 font-mono">0 ชิ้น</span>
+            </div>
+            <div id="assembled-preview-text" class="text-xs sm:text-sm text-neutral-400 italic bg-white/90 p-3 rounded-lg border border-blue-100 min-h-[48px] flex items-center leading-relaxed font-serif">
+              (แตะชิ้นส่วนด้านล่างตามลำดับ 1, 2, 3... เพื่อประกอบรายการบรรณานุกรม)
             </div>
           </div>
 
@@ -757,9 +771,9 @@
   </div>
 
   <!-- Scripts -->
-  <script src="questions_data.js?v=20261027_3"></script>
+  <script src="questions_data.js?v=20261027_4"></script>
   <script src="study_notes_data.js"></script>
-  <script src="bib_lab_data.js"></script>
-  <script src="app.js?v=20261027_3"></script>
+  <script src="bib_lab_data.js?v=20261027_4"></script>
+  <script src="app.js?v=20261027_4"></script>
 </body>
 </html>

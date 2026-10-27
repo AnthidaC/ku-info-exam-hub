@@ -843,29 +843,66 @@ function renderBibLabOrdering() {
   if (currentOrderIndex < 0) currentOrderIndex = list.length - 1;
 
   const item = list[currentOrderIndex];
-  document.getElementById('order-step-badge').textContent = `แบบฝึกหัดที่ ${currentOrderIndex + 1} / ${list.length}`;
-  document.getElementById('order-title').textContent = item.title;
-  document.getElementById('order-desc').textContent = item.description;
+  const stepBadge = document.getElementById('order-step-badge');
+  if (stepBadge) stepBadge.textContent = `แบบฝึกหัดที่ ${currentOrderIndex + 1} / ${list.length}`;
+  const titleEl = document.getElementById('order-title');
+  if (titleEl) titleEl.textContent = item.title;
+  const descEl = document.getElementById('order-desc');
+  if (descEl) descEl.textContent = item.description;
 
   const container = document.getElementById('order-pieces-container');
-  container.innerHTML = '';
-  document.getElementById('order-feedback-box').className = 'hidden';
+  if (container) container.innerHTML = '';
+  const feedbackBox = document.getElementById('order-feedback-box');
+  if (feedbackBox) feedbackBox.className = 'hidden';
 
   // Shuffle pieces for display
   const shuffled = [...item.pieces].sort(() => Math.random() - 0.5);
   currentOrderSelected = [];
 
-  shuffled.forEach(p => {
-    const el = document.createElement('div');
-    el.className = 'drag-item';
-    el.id = `piece-${p.id}`;
-    el.innerHTML = `
-      <span class="font-medium text-sm text-[#1d1d1f]">${formatAcademicText(p.text)}</span>
-      <span class="text-xs px-2 py-0.5 rounded bg-neutral-100 text-neutral-500 font-mono select-none" id="order-seq-${p.id}">คลิกเพื่อเลือก</span>
-    `;
-    el.onclick = () => togglePieceSelection(p.id);
-    container.appendChild(el);
-  });
+  updateAssembledPreview();
+
+  if (container) {
+    shuffled.forEach(p => {
+      const el = document.createElement('div');
+      el.className = 'drag-item';
+      el.id = `piece-${p.id}`;
+      el.innerHTML = `
+        <span class="font-medium text-xs sm:text-sm text-[#1d1d1f] leading-relaxed">${formatAcademicText(p.text)}</span>
+        <span class="text-xs px-2.5 py-1 rounded bg-neutral-100 text-neutral-500 font-mono select-none flex-shrink-0" id="order-seq-${p.id}">คลิกเพื่อเลือก</span>
+      `;
+      el.onclick = () => togglePieceSelection(p.id);
+      container.appendChild(el);
+    });
+  }
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+}
+
+function updateAssembledPreview() {
+  if (!window.BIB_LAB_DATA || !window.BIB_LAB_DATA.ordering_challenges) return;
+  const item = window.BIB_LAB_DATA.ordering_challenges[currentOrderIndex];
+  if (!item) return;
+
+  const countBadge = document.getElementById('order-selected-count');
+  if (countBadge) {
+    countBadge.textContent = `${currentOrderSelected.length} / ${item.pieces.length} ชิ้น`;
+  }
+
+  const prevBox = document.getElementById('assembled-preview-text');
+  if (!prevBox) return;
+
+  if (currentOrderSelected.length === 0) {
+    prevBox.innerHTML = '<span class="text-neutral-400 italic font-sans">(แตะชิ้นส่วนด้านล่างตามลำดับ 1, 2, 3... เพื่อประกอบรายการบรรณานุกรม)</span>';
+  } else {
+    const assembledText = currentOrderSelected.map(pid => {
+      const p = item.pieces.find(x => x.id === pid);
+      return p ? p.text : '';
+    }).join(' ');
+
+    prevBox.innerHTML = `<span class="text-neutral-900 font-serif leading-relaxed">${formatAcademicText(assembledText)}</span>`;
+  }
 }
 
 function togglePieceSelection(pieceId) {
@@ -876,13 +913,15 @@ function togglePieceSelection(pieceId) {
   if (idx > -1) {
     // Remove
     currentOrderSelected.splice(idx, 1);
-    el.classList.remove('in-place');
-    seqLabel.textContent = 'คลิกเพื่อเลือก';
-    seqLabel.className = 'text-xs px-2 py-0.5 rounded bg-neutral-100 text-neutral-500 font-mono select-none';
+    if (el) el.classList.remove('in-place');
+    if (seqLabel) {
+      seqLabel.textContent = 'คลิกเพื่อเลือก';
+      seqLabel.className = 'text-xs px-2.5 py-1 rounded bg-neutral-100 text-neutral-500 font-mono select-none flex-shrink-0';
+    }
   } else {
     // Add
     currentOrderSelected.push(pieceId);
-    el.classList.add('in-place');
+    if (el) el.classList.add('in-place');
   }
 
   // Update all badges with 1, 2, 3...
@@ -890,9 +929,11 @@ function togglePieceSelection(pieceId) {
     const lbl = document.getElementById(`order-seq-${pid}`);
     if (lbl) {
       lbl.textContent = `ลำดับที่ ${orderIdx + 1}`;
-      lbl.className = 'text-xs px-2.5 py-0.5 rounded-full bg-[#0066cc] text-white font-bold select-none';
+      lbl.className = 'text-xs px-2.5 py-1 rounded-full bg-[#0066cc] text-white font-bold select-none flex-shrink-0';
     }
   });
+
+  updateAssembledPreview();
 }
 
 function resetOrderingCurrent() {
@@ -908,9 +949,10 @@ function nextOrderingChallenge(delta) {
 function checkOrderingAnswer() {
   const item = window.BIB_LAB_DATA.ordering_challenges[currentOrderIndex];
   const box = document.getElementById('order-feedback-box');
+  if (!box || !item) return;
 
   if (currentOrderSelected.length !== item.correct_order.length) {
-    box.className = 'block p-4 rounded-xl mb-4 bg-amber-50 border border-amber-200 text-amber-900 text-sm';
+    box.className = 'block p-4 rounded-xl mb-4 bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm';
     box.innerHTML = `⚠️ กรุณาคลิกเลือกชิ้นส่วนให้ครบทุกชิ้นก่อนตรวจคำตอบ (เลือกแล้ว ${currentOrderSelected.length} จาก ${item.correct_order.length} ชิ้น)`;
     return;
   }
@@ -923,23 +965,39 @@ function checkOrderingAnswer() {
     }
   }
 
+  const correctCitation = item.correct_order.map(pid => {
+    const p = item.pieces.find(x => x.id === pid);
+    return p ? p.text : '';
+  }).join(' ');
+
   if (isCorrect) {
-    box.className = 'block p-4 rounded-xl mb-4 bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm';
+    box.className = 'block p-4 rounded-xl mb-4 bg-emerald-50 border border-emerald-200 text-emerald-950 text-xs sm:text-sm';
     box.innerHTML = `
-      <div class="font-bold flex items-center gap-1.5 mb-1">
-        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+      <div class="font-bold flex items-center gap-1.5 mb-2 text-emerald-800 text-sm">
+        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i>
         <span>ยอดเยี่ยม! เรียงลำดับส่วนประกอบได้ถูกต้องสมบูรณ์</span>
       </div>
-      <p class="text-xs text-emerald-700">${formatAcademicText(item.explanation)}</p>
+      <div class="p-3 bg-white/90 rounded-lg border border-emerald-200 mb-2.5 font-serif text-xs sm:text-sm text-neutral-900 leading-relaxed shadow-sm">
+        ${formatAcademicText(correctCitation)}
+      </div>
+      <p class="text-xs text-emerald-800 leading-relaxed">${formatAcademicText(item.explanation)}</p>
     `;
   } else {
-    box.className = 'block p-4 rounded-xl mb-4 bg-red-50 border border-red-200 text-red-900 text-sm';
+    box.className = 'block p-4 rounded-xl mb-4 bg-red-50 border border-red-200 text-red-950 text-xs sm:text-sm';
     box.innerHTML = `
-      <div class="font-bold flex items-center gap-1.5 mb-1">
-        <i data-lucide="x-circle" class="w-4 h-4 text-red-600"></i>
-        <span>ลำดับยังไม่ถูกต้อง ลองตรวจสอบและเรียงใหม่อีกครั้ง</span>
+      <div class="font-bold flex items-center gap-1.5 mb-2 text-red-800 text-sm">
+        <i data-lucide="x-circle" class="w-5 h-5 text-red-600"></i>
+        <span>ลำดับยังไม่ถูกต้อง ลองสังเกตโครงสร้างที่ถูกต้อง:</span>
       </div>
-      <p class="text-xs text-red-700">${formatAcademicText(item.explanation)}</p>
+      <div class="p-3 bg-white/90 rounded-lg border border-red-200 mb-2.5 font-serif text-xs sm:text-sm text-neutral-900 leading-relaxed shadow-sm">
+        <div class="text-[11px] font-sans font-semibold text-neutral-500 mb-1">เฉลยรายการที่ถูกต้องสมบูรณ์:</div>
+        ${formatAcademicText(correctCitation)}
+      </div>
+      <p class="text-xs text-red-800 leading-relaxed mb-3">${formatAcademicText(item.explanation)}</p>
+      <button onclick="resetOrderingCurrent()" class="btn-apple-secondary text-xs py-1.5 px-3 inline-flex items-center gap-1.5">
+        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+        <span>รีเซ็ตแล้วลองเรียงใหม่</span>
+      </button>
     `;
   }
 
@@ -953,6 +1011,7 @@ function renderBibLabSpotMistakes() {
   if (!window.BIB_LAB_DATA || !window.BIB_LAB_DATA.spot_mistakes) return;
   const list = window.BIB_LAB_DATA.spot_mistakes;
   const container = document.getElementById('spot-mistakes-list');
+  if (!container) return;
   container.innerHTML = '';
 
   list.forEach((item, idx) => {
@@ -963,21 +1022,26 @@ function renderBibLabSpotMistakes() {
     let optsHtml = '';
     item.options.forEach((opt, oIdx) => {
       optsHtml += `
-        <button onclick="checkSpotAnswer('${item.id}', ${oIdx})" id="spot-opt-${item.id}-${oIdx}" class="option-btn text-xs py-2.5 px-3">
-          <span class="option-badge text-xs w-6 h-6">${oIdx + 1}</span>
-          <span>${formatAcademicText(opt)}</span>
+        <button onclick="checkSpotAnswer('${item.id}', ${oIdx})" id="spot-opt-${item.id}-${oIdx}" class="option-btn text-xs sm:text-sm py-2.5 px-3.5 flex items-start gap-2.5 w-full text-left transition-all">
+          <span class="option-badge text-xs w-6 h-6 flex-shrink-0 mt-0.5">${oIdx + 1}</span>
+          <span class="leading-relaxed">${formatAcademicText(opt)}</span>
         </button>
       `;
     });
 
     card.innerHTML = `
-      <div class="flex items-center justify-between pb-2 border-b border-neutral-100">
-        <span class="badge-tag">ข้อที่ ${idx + 1}</span>
-        <span class="text-xs text-neutral-400">ค้นหาจุดผิด</span>
+      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <span class="badge-tag">ข้อที่ ${idx + 1} / ${list.length}</span>
+          <span class="text-xs text-neutral-500 font-medium">Spot-the-Mistake</span>
+        </div>
+        <span class="text-xs text-amber-700 font-medium bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200/60">
+          ⚠️ มีข้อผิดพลาดตามเกณฑ์ APA 7th
+        </span>
       </div>
       <div>
-        <div class="text-xs text-neutral-500 font-semibold mb-1">ตัวอย่างรายการอ้างอิงที่มีจุดผิด:</div>
-        <div class="p-3.5 bg-neutral-50 border border-neutral-200 rounded-xl font-mono text-xs text-neutral-800 leading-relaxed select-all">
+        <div class="text-xs text-neutral-500 font-semibold mb-1.5">ตัวอย่างรายการอ้างอิงที่มีจุดผิด:</div>
+        <div class="p-3.5 bg-neutral-50 border border-neutral-200 rounded-xl font-mono text-xs sm:text-sm text-neutral-800 leading-relaxed select-all">
           ${formatAcademicText(item.bad_citation)}
         </div>
       </div>
@@ -987,13 +1051,26 @@ function renderBibLabSpotMistakes() {
           ${optsHtml}
         </div>
       </div>
-      <div id="spot-feedback-${item.id}" class="hidden explanation-box text-xs">
-        ${formatAcademicText(item.explanation)}
+      <div id="spot-feedback-${item.id}" class="hidden explanation-box text-xs sm:text-sm mt-3">
+        <div class="font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
+          <i data-lucide="info" class="w-4 h-4 text-emerald-600"></i>
+          <span>คำอธิบายตามมาตรฐาน APA Style 7th Edition:</span>
+        </div>
+        <div class="text-neutral-700 leading-relaxed mb-2.5">
+          ${formatAcademicText(item.explanation)}
+        </div>
+        <button onclick="resetSpotCard('${item.id}')" class="text-xs text-neutral-500 hover:text-neutral-800 underline inline-flex items-center gap-1 mt-1">
+          <i data-lucide="rotate-ccw" class="w-3 h-3"></i> ทำข้อนี้อีกครั้ง
+        </button>
       </div>
     `;
 
     container.appendChild(card);
   });
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
 }
 
 function checkSpotAnswer(itemId, selectedIdx) {
@@ -1003,6 +1080,7 @@ function checkSpotAnswer(itemId, selectedIdx) {
   item.options.forEach((_, oIdx) => {
     const btn = document.getElementById(`spot-opt-${itemId}-${oIdx}`);
     if (btn) {
+      btn.disabled = true;
       if (oIdx === item.answer) {
         btn.classList.add('correct');
       } else if (oIdx === selectedIdx) {
@@ -1012,7 +1090,35 @@ function checkSpotAnswer(itemId, selectedIdx) {
   });
 
   const fb = document.getElementById(`spot-feedback-${itemId}`);
-  if (fb) fb.classList.remove('hidden');
+  if (fb) {
+    fb.classList.remove('hidden');
+  }
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+}
+
+function resetSpotCard(itemId) {
+  const item = window.BIB_LAB_DATA.spot_mistakes.find(x => x.id === itemId);
+  if (!item) return;
+
+  item.options.forEach((_, oIdx) => {
+    const btn = document.getElementById(`spot-opt-${itemId}-${oIdx}`);
+    if (btn) {
+      btn.disabled = false;
+      btn.classList.remove('correct', 'wrong');
+    }
+  });
+
+  const fb = document.getElementById(`spot-feedback-${itemId}`);
+  if (fb) {
+    fb.classList.add('hidden');
+  }
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
 }
 
 // 3. Cheatsheet Cards
@@ -1020,78 +1126,51 @@ function renderBibLabCheatsheet() {
   const container = document.getElementById('bib-cheatsheet-cards');
   if (!container) return;
 
-  const sheets = [
-    {
-      title: '1. หนังสือทั่วไป (Book)',
-      formula: 'ผู้แต่ง. (ปีพิมพ์). ชื่อหนังสือ (ตัวเอียง). สำนักพิมพ์.',
-      example_th: 'อนุพันธ์ นิตินัย. (2555). <em>ตำนาน 77 จังหวัด</em>. ไทยควอลิตี้บุ๊คส์.',
-      example_en: 'Jackson, L. M. (2019). <em>The psychology of prejudice</em> (2nd ed.). American Psychological Association.',
-      tips: 'ตัดคำนำหน้านาม (นาย, นาง) และตำแหน่งทางวิชาการ (ดร., รศ.) ออกทั้งหมด ชื่อหนังสือต้องทำตัวเอียง'
-    },
-    {
-      title: '2. บทความในวารสาร (Journal Article)',
-      formula: 'ผู้แต่ง. (ปีพิมพ์). ชื่อบทความ. ชื่อวารสาร (ตัวเอียง), ปีที่ (ตัวเอียง)(ฉบับที่), เลขหน้า. DOI/URL',
-      example_th: 'ธัญนาฏ ญาณพิบูลย์ และคณะ. (2563). การใช้นวัตกรรม... <em>จุฬาลงกรณ์ธุรกิจปริทัศน์</em>, <em>42</em>(2), 54-72.',
-      example_en: 'Singh, M. K., & Anjali, K. (2022). Seqiahr Model. <em>Applications and Applied Mathematics</em>, <em>17</em>(1), 146–171.',
-      tips: 'ชื่อวารสารและเลขปีที่ (Volume) ทำตัวเอียง ส่วนเลขฉบับที่ในวงเล็บและเลขหน้าเป็นตัวตรง'
-    },
-    {
-      title: '3. หนังสือรวมบทความ (Book Chapter)',
-      formula: 'ผู้เขียนบทความ. (ปี). ชื่อบทความ. ใน บรรณาธิการ (บ.ก.), ชื่อหนังสือ (ตัวเอียง) (น. เลขหน้า). สำนักพิมพ์.',
-      example_th: 'วนิดา เหมะกุล. (2555). การให้เหตุผล. ใน ยุทธนา ลิลา (บ.ก.), <em>คณิตศาสตร์...</em> (น. 50-55). มสธ.',
-      example_en: 'Bornstein, M. H. (2003). Socioeconomic status. In M. H. Bornstein (Ed.), <em>Monographs</em> (pp. 29–82). Erlbaum.',
-      tips: 'ชื่อบรรณาธิการภาษาอังกฤษในส่วน In ... (Eds.) จะไม่กลับนามสกุล'
-    },
-    {
-      title: '4. วิทยานิพนธ์ (Theses / Dissertations)',
-      formula: 'ผู้แต่ง. (ปี). ชื่อเรื่อง [วิทยานิพนธ์ปริญญามหาบัณฑิต/ดุษฎีบัณฑิตไม่ได้ตีพิมพ์]. มหาวิทยาลัย.',
-      example_th: 'ธันทิวา ภักดีภัทรากร. (2563). <em>การพัฒนาเกมอาหารล้านนา</em> [วิทยานิพนธ์ปริญญามหาบัณฑิตไม่ได้ตีพิมพ์]. มหาวิทยาลัยเชียงใหม่.',
-      example_en: 'Jung, M. S. (2014). <em>A structural equation model</em> [Unpublished doctoral dissertation]. Choong-Ang University.',
-      tips: 'ระบุระดับปริญญาในเครื่องหมายวงเล็บเหลี่ยม [...]'
-    },
-    {
-      title: '5. เว็บไซต์ (Websites)',
-      formula: 'ผู้เขียน. (ปี, วันที่ เดือน). ชื่อเรื่อง (ตัวเอียง). ชื่อเว็บไซต์. URL',
-      example_th: 'เอมอัชฌา วัฒนบุรานนท์. (2554, 27 เมษายน). <em>การจัดการเรียนรู้สุขศึกษา</em>. จุฬาวิทยานุกรม. http://...',
-      example_en: 'Bologna, C. (2019, October 31). <em>Why people love horror movies</em>. HuffPost. https://...',
-      tips: 'หากมีวันเดือนปี ให้ระบุปีขึ้นก่อนตามด้วย วันที่ เดือน'
-    },
-    {
-      title: '6. การอ้างอิงในเนื้อหา (In-text Summary)',
-      formula: '1 คน: ธานินทร์ (2560) / 2 คน: เอกราช และชัยยศ (2561) / 3 คนขึ้นไป: ชมแข และคณะ (2551)',
-      example_th: 'ภาษาอังกฤษในวงเล็บเชื่อมด้วย & เช่น (Wegener & Petty, 1994) นอกวงเล็บใช้ and',
-      example_en: '3 คนขึ้นไปภาษาอังกฤษใช้ et al. ตั้งแต่ครั้งแรก เช่น Schmidt et al. (2018)',
-      tips: 'หน่วยงานมีชื่อย่อ ครั้งแรกใช้ [ชื่อย่อ] ในวงเล็บเหลี่ยม ครั้งต่อไปใช้ชื่อย่อได้เลย'
-    }
-  ];
-
+  const sheets = (window.BIB_LAB_DATA && window.BIB_LAB_DATA.cheatsheet) ? window.BIB_LAB_DATA.cheatsheet : [];
   container.innerHTML = '';
+
   sheets.forEach(s => {
     const card = document.createElement('div');
-    card.className = 'apple-card space-y-3';
+    card.className = 'apple-card space-y-3.5';
     card.innerHTML = `
       <div class="flex items-center justify-between pb-2 border-b border-neutral-100">
         <h3 class="font-bold text-base text-[#0066cc]">${escapeHtml(s.title)}</h3>
-        <span class="badge-outline text-[11px]">APA 7th</span>
+        <span class="badge-outline text-[11px] font-semibold text-[#0066cc] border-blue-200">APA 7th</span>
       </div>
       <div>
-        <div class="text-[11px] font-semibold text-neutral-400 uppercase tracking-wider">โครงสร้างสูตร:</div>
-        <div class="p-2.5 bg-neutral-50 rounded-lg text-xs font-mono text-neutral-800 border border-neutral-200 mt-1">
+        <div class="text-[11px] font-semibold text-neutral-400 uppercase tracking-wider">โครงสร้างสูตรมาตรฐาน:</div>
+        <div class="p-2.5 bg-neutral-50 rounded-lg text-xs font-mono text-neutral-800 border border-neutral-200 mt-1 leading-relaxed">
           ${escapeHtml(s.formula)}
         </div>
       </div>
-      <div class="text-xs space-y-1">
-        <div class="text-neutral-500 font-medium">ตัวอย่างภาษาไทย:</div>
-        <div class="p-2 bg-blue-50/50 rounded text-neutral-800 border border-blue-100 text-xs">${s.example_th}</div>
-        <div class="text-neutral-500 font-medium pt-1">ตัวอย่างภาษาอังกฤษ:</div>
-        <div class="p-2 bg-neutral-50 rounded text-neutral-800 border border-neutral-200 text-xs">${s.example_en}</div>
+      <div class="text-xs space-y-2">
+        <div>
+          <div class="text-neutral-500 font-medium mb-0.5">ตัวอย่างภาษาไทย:</div>
+          <div class="p-2.5 bg-neutral-50 rounded-lg text-neutral-800 border border-neutral-200 text-xs font-serif leading-relaxed">
+            ${formatAcademicText(s.example_th)}
+          </div>
+        </div>
+        <div>
+          <div class="text-neutral-500 font-medium mb-0.5">ตัวอย่างภาษาอังกฤษ:</div>
+          <div class="p-2.5 bg-neutral-50 rounded-lg text-neutral-800 border border-neutral-200 text-xs font-serif leading-relaxed">
+            ${formatAcademicText(s.example_en)}
+          </div>
+        </div>
       </div>
-      <div class="text-xs text-amber-700 bg-amber-50 p-2.5 rounded-lg border border-amber-200">
-        💡 <strong>จุดสังเกตสำคัญ:</strong> ${escapeHtml(s.tips)}
+      <div class="text-xs text-amber-900 bg-amber-50/80 p-2.5 rounded-lg border border-amber-200/70 leading-relaxed">
+        <span class="font-bold text-amber-800 flex items-center gap-1 mb-1">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span>จุดสังเกตสำคัญ & หลุมพรางข้อสอบ:</span>
+        </span>
+        ${escapeHtml(s.tips)}
       </div>
     `;
     container.appendChild(card);
   });
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
 }
 
 // --- Study Notes View Component ---
