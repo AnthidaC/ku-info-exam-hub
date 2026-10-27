@@ -252,27 +252,46 @@ function renderCurrentQuestion() {
   const container = document.getElementById('options-container');
   container.innerHTML = '';
 
+  const hasOptionImages = q.option_images && q.option_images.some(x => x);
+  if (hasOptionImages) {
+    container.className = 'grid grid-cols-2 gap-3 sm:gap-4.5';
+  } else {
+    container.className = 'space-y-2.5 sm:space-y-3';
+  }
+
   const letters = ['ก', 'ข', 'ค', 'ง'];
   const isAnswered = userAnswers.hasOwnProperty(q.id);
   const selectedIdx = userAnswers[q.id];
 
   q.options.forEach((opt, optIdx) => {
     const btn = document.createElement('button');
-    btn.className = 'option-btn';
+    btn.className = hasOptionImages ? 'option-btn option-btn-grid' : 'option-btn';
     btn.onclick = () => selectOption(optIdx);
 
     const letterLabel = letters[optIdx] || `${optIdx + 1}`;
     const optText = typeof opt === 'object' ? opt.text : opt;
     const optImg = (typeof opt === 'object' && opt.image) || (q.option_images && q.option_images[optIdx]);
 
-    if (optImg) {
-      btn.innerHTML = `
-        <span class="option-badge">${letterLabel}</span>
-        <div class="flex items-center gap-2.5 sm:gap-3 flex-grow text-left min-w-0">
-          <img src="${optImg}" class="h-9 sm:h-11 w-auto max-w-[100px] sm:max-w-[130px] object-contain rounded bg-white p-0.5 border border-neutral-200/90 flex-shrink-0 shadow-xs" alt="ตัวเลือก ${letterLabel}">
-          <span class="flex-grow font-medium text-xs sm:text-sm text-[#1d1d1f] break-words">${formatAcademicText(optText)}</span>
-        </div>
-      `;
+    if (hasOptionImages) {
+      if (optImg) {
+        btn.innerHTML = `
+          <div class="flex items-center justify-between w-full mb-1">
+            <span class="option-badge">${letterLabel}</span>
+          </div>
+          <div class="w-full flex items-center justify-center flex-grow py-1 sm:py-2">
+            <img src="${optImg}" class="max-h-16 sm:max-h-24 max-w-full w-auto object-contain drop-shadow-2xs" alt="ตัวเลือก ${letterLabel}">
+          </div>
+        `;
+      } else {
+        btn.innerHTML = `
+          <div class="flex items-center justify-between w-full mb-1">
+            <span class="option-badge">${letterLabel}</span>
+          </div>
+          <div class="w-full flex items-center justify-center flex-grow py-2 sm:py-3">
+            <span class="font-bold text-xs sm:text-sm text-[#1d1d1f] leading-snug">${formatAcademicText(optText)}</span>
+          </div>
+        `;
+      }
     } else {
       btn.innerHTML = `
         <span class="option-badge">${letterLabel}</span>
