@@ -148,7 +148,7 @@ window.EXAM_QUESTIONS = [
     "answer": 0,
     "explanation": "THAIJO (Thai Journals Online) เป็นระบบฐานข้อมูลวารสารอิเล็กทรอนิกส์กลางของประเทศไทยที่รวบรวมวารสารวิชาการที่ตีพิมพ์ในประเทศไทยทุกสาขาวิชา จัดการโดย TCI (ศูนย์ดัชนีการอ้างอิงวารสารไทย) ในขณะที่ UpToDate เป็นฐานข้อมูลการแพทย์ และ Passport GMID เป็นฐานข้อมูลข้อมูลการตลาดและสถิติธุรกิจระดับโลก",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_thaijo.png"
+    "explanation_image": "assets/exam_images/clean_logo_thaijo.png"
   },
   {
     "id": 11,
@@ -164,7 +164,7 @@ window.EXAM_QUESTIONS = [
     "answer": 2,
     "explanation": "CEIC (CEIC Data) เป็นฐานข้อมูลสถิติและข้อมูลเชิงลึกทางเศรษฐกิจ มหภาค การเงิน และตลาดทุนที่ครอบคลุมประเทศต่างๆ ทั่วโลก (Complete Anatomy คือโมเดลกายวิภาค 3 มิติ, CINAHL คือการพยาบาลและสหเวชศาสตร์, DOAB คือหนังสือ Open Access)",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_ceic.png"
+    "explanation_image": "assets/exam_images/clean_logo_ceic.png"
   },
   {
     "id": 12,
@@ -180,7 +180,7 @@ window.EXAM_QUESTIONS = [
     "answer": 2,
     "explanation": "Stash (Stash Media) เป็นฐานข้อมูลและวิดีโออาร์ไคฟ์ออนไลน์ที่รวบรวมผลงาน visual effects, motion design และ animation projects จากนักออกแบบ ศิลปิน และสตูดิโอชั้นนำทั่วโลก (DynamicHealth เป็นฐานข้อมูลสุขภาพ/การพยาบาล, USP คือ Pharmacopeia มาตรฐานยา)",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_stash.png"
+    "explanation_image": "assets/exam_images/clean_logo_stash.png"
   },
   {
     "id": 13,
@@ -196,7 +196,7 @@ window.EXAM_QUESTIONS = [
     "answer": 1,
     "explanation": "WGSN (Worth Global Style Network) เป็นฐานข้อมูลพยากรณ์เทรนด์แฟชั่น การออกแบบ ไลฟ์สไตล์ และผู้บริโภค ไม่ใช่ฐานข้อมูลสำหรับค้นหาวิทยานิพนธ์ (ในขณะที่ EBSCO Open Dissertations, TDC ThaiLIS, และ KU E-Thesis ล้วนเป็นฐานข้อมูลวิทยานิพนธ์โดยตรง)",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_wgsn.png"
+    "explanation_image": "assets/exam_images/clean_logo_wgsn.png"
   },
   {
     "id": 14,
@@ -212,7 +212,7 @@ window.EXAM_QUESTIONS = [
     "answer": 0,
     "explanation": "IEEE Xplore Digital Library เป็นฐานข้อมูลงานวิจัยชั้นนำระดับโลกด้านวิศวกรรมศาสตร์ โดยเฉพาะวิศวกรรมไฟฟ้า อิเล็กทรอนิกส์ คอมพิวเตอร์ และเทคโนโลยี (UpToDate และ PubMed เป็นฐานข้อมูลการแพทย์, EconLit เป็นฐานข้อมูลเศรษฐศาสตร์)",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_ieee.png"
+    "explanation_image": "assets/exam_images/clean_logo_ieee.png"
   },
   {
     "id": 15,
@@ -228,7 +228,7 @@ window.EXAM_QUESTIONS = [
     "answer": 0,
     "explanation": "ERIC (Education Resources Information Center) ดำเนินการโดย Institute of Education Sciences สหรัฐอเมริกา เป็นฐานข้อมูลด้านการศึกษา การเรียนการสอน และศึกษาศาสตร์/ครุศาสตร์ที่ใหญ่ที่สุด (EMIS เป็นด้านตลาดเกิดใหม่และเศรษฐกิจการลงทุน, WGSN เป็นด้านเทรนด์แฟชั่น, TCDC MATERIAL DATABASE เป็นฐานข้อมูลวัสดุการออกแบบ)",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_eric.png"
+    "explanation_image": "assets/exam_images/clean_logo_eric.png"
   },
   {
     "id": 16,
@@ -244,7 +244,7 @@ window.EXAM_QUESTIONS = [
     "answer": 0,
     "explanation": "ASM Journals (American Society for Microbiology) เป็นฐานข้อมูลวารสารด้านจุลชีววิทยาและวิทยาศาสตร์การแพทย์ จึงไม่เกี่ยวข้องกับด้านการจัดการ บริหาร เศรษฐศาสตร์ หรือการตลาด (ส่วน Emerald มีชื่อเสียงและเน้นหนักด้านการจัดการ บริหารธุรกิจ และการตลาด)",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_asm.png"
+    "explanation_image": "assets/exam_images/clean_logo_asm.png"
   },
   {
     "id": 17,
@@ -260,7 +260,7 @@ window.EXAM_QUESTIONS = [
     "answer": 3,
     "explanation": "National Geographic Virtual Library (โดยสำนักพิมพ์ Gale) เป็นฐานข้อมูลที่รวบรวมนิตยสาร National Geographic ย้อนหลังตั้งแต่ปี ค.ศ. 1888 จนถึงปัจจุบัน ตลอดจนหนังสือ แผนที่ รูปภาพ และวิดีโอทั้งหมดของสมาคม National Geographic Society",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_natgeo.png"
+    "explanation_image": "assets/exam_images/clean_logo_natgeo.png"
   },
   {
     "id": 18,
@@ -276,7 +276,7 @@ window.EXAM_QUESTIONS = [
     "answer": 1,
     "explanation": "Hibrary (ไฮบรารี่) เป็นแพลตฟอร์มและฐานข้อมูลหนังสืออิเล็กทรอนิกส์ (E-Book) ภาษาไทย สำหรับห้องสมุดสถาบันอุดมศึกษาและองค์กรต่างๆ ครอบคลุมหนังสือภาษาไทยหลากหลายสาขาวิชา (NEJM Evidence ด้านการแพทย์, Oxford Scholarship ด้านวิชาการภาษาอังกฤษ, Material ConneXion ด้านนวัตกรรมวัสดุ)",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_hibrary.png"
+    "explanation_image": "assets/exam_images/clean_logo_hibrary.png"
   },
   {
     "id": 19,
@@ -292,7 +292,7 @@ window.EXAM_QUESTIONS = [
     "answer": 3,
     "explanation": "Osmosis from Elsevier เป็นแพลตฟอร์มการเรียนรู้ทางการแพทย์ที่ออกแบบมาสำหรับหลักสูตรแพทยศาสตร์บัณฑิตโดยเฉพาะ ครอบคลุมเนื้อหารายวิชาทั้งชั้นปรีคลินิก (Basic Medical Sciences เช่น Anatomy, Physiology, Pathology, Pharmacology) และชั้นคลินิก (Clinical Sciences/Rotations) ผ่านวิดีโอแอนิเมชัน แฟลชการ์ด และข้อสอบแบบจำลอง",
     "tag": "แนวข้อสอบในห้องเรียน",
-    "image": "assets/exam_images/clean_logo_osmosis.png"
+    "explanation_image": "assets/exam_images/clean_logo_osmosis.png"
   },
   {
     "id": 20,

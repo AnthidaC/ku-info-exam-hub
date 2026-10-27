@@ -255,16 +255,29 @@ function renderCurrentQuestion() {
   const isAnswered = userAnswers.hasOwnProperty(q.id);
   const selectedIdx = userAnswers[q.id];
 
-  q.options.forEach((optText, optIdx) => {
+  q.options.forEach((opt, optIdx) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.onclick = () => selectOption(optIdx);
 
     const letterLabel = letters[optIdx] || `${optIdx + 1}`;
-    btn.innerHTML = `
-      <span class="option-badge">${letterLabel}</span>
-      <span class="flex-grow">${formatAcademicText(optText)}</span>
-    `;
+    const optText = typeof opt === 'object' ? opt.text : opt;
+    const optImg = (typeof opt === 'object' && opt.image) || (q.option_images && q.option_images[optIdx]);
+
+    if (optImg) {
+      btn.innerHTML = `
+        <span class="option-badge">${letterLabel}</span>
+        <div class="flex items-center gap-3 flex-grow text-left">
+          <img src="${optImg}" class="h-10 max-h-12 w-auto max-w-[120px] object-contain rounded bg-white p-1 border border-neutral-200 flex-shrink-0" alt="ตัวเลือก ${letterLabel}">
+          <span class="flex-grow">${formatAcademicText(optText)}</span>
+        </div>
+      `;
+    } else {
+      btn.innerHTML = `
+        <span class="option-badge">${letterLabel}</span>
+        <span class="flex-grow">${formatAcademicText(optText)}</span>
+      `;
+    }
 
     // Apply selection / result states
     if (isAnswered && selectedIdx === optIdx) {
@@ -285,12 +298,27 @@ function renderCurrentQuestion() {
   // Explanation Container
   const expBox = document.getElementById('explanation-container');
   const expText = document.getElementById('q-explanation-text');
+  const expImgContainer = document.getElementById('exp-image-container');
+  const expImg = document.getElementById('exp-image');
 
   if (examSubmitted || (instantFeedback && isAnswered)) {
     expText.innerHTML = formatAcademicText(q.explanation || 'ไม่มีคำอธิบายเพิ่มเติมสำหรับข้อนี้');
+    if (expImgContainer && expImg) {
+      if (q.explanation_image) {
+        expImg.src = q.explanation_image;
+        expImgContainer.classList.remove('hidden');
+      } else {
+        expImgContainer.classList.add('hidden');
+        expImg.src = '';
+      }
+    }
     expBox.classList.remove('hidden');
   } else {
     expBox.classList.add('hidden');
+    if (expImgContainer && expImg) {
+      expImgContainer.classList.add('hidden');
+      expImg.src = '';
+    }
   }
 
   // Prev / Next button states
@@ -1216,7 +1244,7 @@ function updateStatsDashboard() {
         </div>
         <h4 class="font-bold text-sm text-[#1d1d1f]">${formatAcademicText(q.question)}</h4>
         <div class="text-xs text-emerald-800 font-semibold bg-emerald-50 p-2 rounded border border-emerald-200">
-          ✓ คำตอบที่ถูกต้อง: ${formatAcademicText(q.options[q.answer])}
+          ✓ คำตอบที่ถูกต้อง: ${formatAcademicText(typeof q.options[q.answer] === "object" ? q.options[q.answer].text : q.options[q.answer])}
         </div>
         <p class="text-xs text-neutral-600 pt-1 border-t border-red-100">${formatAcademicText(q.explanation)}</p>
       `;
