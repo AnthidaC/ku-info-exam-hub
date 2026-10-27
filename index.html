@@ -42,33 +42,33 @@
     </div>
   </header>
 
-  <!-- 2. Apple Frosted Glass Sticky Sub-Nav (Desktop & Tablet) -->
+  <!-- 2. Apple Frosted Glass Sticky Sub-Nav -->
   <nav class="apple-subnav-frosted">
-    <div class="flex items-center gap-4 max-w-7xl mx-auto w-full justify-between">
+    <div class="flex items-center gap-3 sm:gap-4 max-w-7xl mx-auto w-full justify-between">
       
-      <!-- Logo / Title -->
+      <!-- Desktop Logo / Title -->
       <div class="flex items-center gap-2 flex-shrink-0">
-        <span class="text-lg sm:text-xl font-bold tracking-tight text-[#0066cc]">คลังข้อสอบสารสนเทศ</span>
+        <span class="text-base sm:text-xl font-bold tracking-tight text-[#0066cc]">คลังข้อสอบสารสนเทศ</span>
         <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-semibold border border-blue-200 hidden lg:inline">มก. กำแพงแสน</span>
       </div>
 
-      <!-- Navigation Tabs (Desktop & Tablet) -->
-      <div class="nav-tabs-wrapper">
+      <!-- Navigation Tabs (Desktop & Tablet >= 768px) -->
+      <div class="nav-tabs-wrapper hidden md:flex">
         <button onclick="switchTab('exam')" id="tab-btn-exam" class="nav-tab-btn active">
           <i data-lucide="target" class="w-4 h-4"></i>
           <span>จำลองสอบจริง</span>
         </button>
-        <button onclick="switchTab('category')" id="tab-btn-category" class="nav-tab-btn">
-          <i data-lucide="layers" class="w-4 h-4"></i>
-          <span>ฝึกทำแยกหมวด</span>
+        <button onclick="switchTab('notes')" id="tab-btn-notes" class="nav-tab-btn">
+          <i data-lucide="book-open" class="w-4 h-4"></i>
+          <span>สรุปสาระความรู้</span>
         </button>
         <button onclick="switchTab('biblab')" id="tab-btn-biblab" class="nav-tab-btn">
           <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
           <span>ห้องทดลองบรรณานุกรม</span>
         </button>
-        <button onclick="switchTab('notes')" id="tab-btn-notes" class="nav-tab-btn">
-          <i data-lucide="book-open" class="w-4 h-4"></i>
-          <span>สรุปสาระความรู้</span>
+        <button onclick="switchTab('category')" id="tab-btn-category" class="nav-tab-btn">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          <span>ฝึกทำแยกหมวด</span>
         </button>
         <button onclick="switchTab('stats')" id="tab-btn-stats" class="nav-tab-btn">
           <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
@@ -77,7 +77,31 @@
         </button>
       </div>
 
-      <!-- Fast Action CTA -->
+      <!-- Mobile Fast Switcher Controls (< 768px) -->
+      <div class="flex md:hidden items-center justify-between w-full">
+        <!-- Current Tab Badge -->
+        <div class="flex items-center gap-1.5 overflow-hidden">
+          <span id="mobile-current-view-badge" class="font-bold text-xs sm:text-sm text-[#0066cc] truncate max-w-[130px]">
+            🎯 จำลองสอบจริง
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Quick 1-Tap Toggle between Exam & Notes -->
+          <button onclick="toggleExamAndNotes()" id="mobile-quick-switch-btn" class="btn-apple-primary text-xs py-1 px-2.5 flex items-center gap-1 font-bold shadow-xs">
+            <i data-lucide="book-open" class="w-3.5 h-3.5" id="mobile-quick-switch-icon"></i>
+            <span id="mobile-quick-switch-txt">อ่านสรุป</span>
+          </button>
+
+          <!-- Mobile Full Menu Drawer Trigger -->
+          <button onclick="openMobileNavModal()" class="btn-apple-ghost text-xs py-1 px-2.5 flex items-center gap-1 border-neutral-300 font-medium">
+            <i data-lucide="menu" class="w-4 h-4"></i>
+            <span>เมนู</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Fast Action CTA (Desktop only) -->
       <div class="hidden xl:flex items-center gap-2">
         <button onclick="startQuickMock()" class="btn-apple-primary text-xs py-2 px-4 shadow-sm">
           <i data-lucide="play" class="w-3.5 h-3.5"></i>
@@ -94,6 +118,19 @@
          VIEW 1: EXAM SIMULATOR (โหมดจำลองสอบจริง & ทำข้อสอบ)
          ======================================================================= -->
     <section id="view-exam" class="tab-view block">
+      
+      <!-- Quick Switch Banner (Mobile/Tablet Friendly) -->
+      <div class="bg-blue-50/90 border border-blue-200/80 rounded-2xl p-3 sm:p-4 mb-4 flex items-center justify-between gap-3 text-xs sm:text-sm">
+        <div class="flex items-center gap-2.5 text-blue-900 font-medium">
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-[#0066cc]">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+          </div>
+          <span>ต้องการทบทวนเนื้อหาก่อนสอบ? อ่านสรุปสาระสำคัญทุกบทได้ทันที</span>
+        </div>
+        <button onclick="switchTab('notes')" class="btn-apple-primary text-xs py-1.5 px-3 whitespace-nowrap shadow-xs flex-shrink-0">
+          <span>อ่านสรุปความรู้ &rarr;</span>
+        </button>
+      </div>
       
       <!-- Exam Control Bar (Flexible Timer: 2 ชั่วโมง มาตรฐาน หรือเลือกเวลาได้) -->
       <div class="bg-[#f5f5f7] border border-[#e5e7eb] rounded-2xl p-3.5 sm:p-5 mb-5 flex flex-wrap items-center justify-between gap-3 sm:gap-4">
@@ -381,6 +418,19 @@
          ======================================================================= -->
     <section id="view-notes" class="tab-view hidden space-y-6">
       
+      <!-- Quick Jump Back to Exam Banner -->
+      <div class="bg-blue-50/90 border border-blue-200/80 rounded-2xl p-3 sm:p-4 flex items-center justify-between gap-3 text-xs sm:text-sm">
+        <div class="flex items-center gap-2.5 text-blue-900 font-medium">
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-[#0066cc]">
+            <i data-lucide="target" class="w-4 h-4"></i>
+          </div>
+          <span>ทบทวนเนื้อหาพร้อมแล้ว? พร้อมลุยทำข้อสอบ 105 ข้อ</span>
+        </div>
+        <button onclick="switchTab('exam')" class="btn-apple-primary text-xs py-1.5 px-3 whitespace-nowrap shadow-xs flex-shrink-0">
+          <span>ไปทำข้อสอบทันที &rarr;</span>
+        </button>
+      </div>
+      
       <!-- Header -->
       <div class="bg-[#f5f5f7] border border-[#e5e7eb] rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -482,22 +532,109 @@
       <i data-lucide="target"></i>
       <span>สอบ</span>
     </button>
-    <button onclick="switchTab('category')" id="mob-nav-category" class="mobile-nav-item">
-      <i data-lucide="layers"></i>
-      <span>หมวดหมู่</span>
+    <button onclick="switchTab('notes')" id="mob-nav-notes" class="mobile-nav-item">
+      <i data-lucide="book-open"></i>
+      <span>สรุปความรู้</span>
     </button>
     <button onclick="switchTab('biblab')" id="mob-nav-biblab" class="mobile-nav-item">
       <i data-lucide="sparkles"></i>
       <span>บรรณานุกรม</span>
     </button>
-    <button onclick="switchTab('notes')" id="mob-nav-notes" class="mobile-nav-item">
-      <i data-lucide="book-open"></i>
-      <span>สรุป</span>
+    <button onclick="switchTab('category')" id="mob-nav-category" class="mobile-nav-item">
+      <i data-lucide="layers"></i>
+      <span>แยกหมวด</span>
     </button>
     <button onclick="switchTab('stats')" id="mob-nav-stats" class="mobile-nav-item">
       <i data-lucide="bar-chart-2"></i>
       <span>สถิติ</span>
     </button>
+  </div>
+
+  <!-- =======================================================================
+       MOBILE NAVIGATION DRAWER MODAL (Apple Action Sheet Style)
+       ======================================================================= -->
+  <div id="mobile-nav-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex flex-col justify-end" onclick="closeMobileNavModal()">
+    <div class="bg-white rounded-t-3xl p-5 shadow-2xl border-t border-neutral-200 max-h-[85vh] overflow-y-auto animate-slideUp" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-3 mb-4 border-b border-neutral-100">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#0066cc]"></span>
+          <h3 class="font-bold text-base text-[#1d1d1f]">เลือกหน้าเมนูที่ต้องการ</h3>
+        </div>
+        <button onclick="closeMobileNavModal()" class="p-1.5 rounded-full hover:bg-neutral-100 text-neutral-500">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-2.5">
+        <button onclick="switchTabAndCloseNav('exam')" class="w-full text-left p-3.5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-blue-50 hover:border-blue-300 flex items-center justify-between transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-[#0066cc] flex items-center justify-center font-bold flex-shrink-0">
+              <i data-lucide="target" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-bold text-sm text-neutral-900">จำลองห้องสอบจริง (105 ข้อ)</div>
+              <div class="text-xs text-neutral-500">จับเวลา 2 ชม. ข้อสอบครบทุกชุดพร้อมเฉลยละเอียด</div>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-400"></i>
+        </button>
+
+        <button onclick="switchTabAndCloseNav('notes')" class="w-full text-left p-3.5 rounded-2xl border border-blue-200 bg-blue-50/60 hover:bg-blue-100/60 flex items-center justify-between transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold flex-shrink-0">
+              <i data-lucide="book-open" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-bold text-sm text-[#0066cc] flex items-center gap-1.5">
+                <span>สรุปสาระความรู้เตรียมสอบ</span>
+                <span class="text-[10px] bg-emerald-600 text-white font-bold px-1.5 py-0.5 rounded-full">แนะนำ</span>
+              </div>
+              <div class="text-xs text-neutral-500">ตารางกฎหมาย, โอเปอเรเตอร์สืบค้น, โครงสร้างบรรณานุกรม</div>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-400"></i>
+        </button>
+
+        <button onclick="switchTabAndCloseNav('biblab')" class="w-full text-left p-3.5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-amber-50 hover:border-amber-300 flex items-center justify-between transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold flex-shrink-0">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-bold text-sm text-neutral-900">ห้องทดลองบรรณานุกรม (APA 7th)</div>
+              <div class="text-xs text-neutral-500">เกมลากเรียงส่วนประกอบ & จับผิดจุดผิดในบรรณานุกรม</div>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-400"></i>
+        </button>
+
+        <button onclick="switchTabAndCloseNav('category')" class="w-full text-left p-3.5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-blue-50 hover:border-blue-300 flex items-center justify-between transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold flex-shrink-0">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-bold text-sm text-neutral-900">ฝึกทำแยกตามหมวดหมู่</div>
+              <div class="text-xs text-neutral-500">เลือกเจาะเฉพาะหมวดที่ยังไม่แม่น เช่น จริยธรรม, ฐานข้อมูล</div>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-400"></i>
+        </button>
+
+        <button onclick="switchTabAndCloseNav('stats')" class="w-full text-left p-3.5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-blue-50 hover:border-blue-300 flex items-center justify-between transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-neutral-200 text-neutral-700 flex items-center justify-center font-bold flex-shrink-0">
+              <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-bold text-sm text-neutral-900">สถิติ & คลังข้อผิดบ่อย</div>
+              <div class="text-xs text-neutral-500">ดูคะแนนย้อนหลังและข้อที่เคยทำผิดเพื่อทบทวนซ้ำ</div>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-400"></i>
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Mobile Sticky Footer Bar during Exam View -->

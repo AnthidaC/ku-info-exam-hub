@@ -1,0 +1,352 @@
+{
+  "quiz_title": "กิจกรรม 11-A หลังเรียน (702_0137...)",
+  "source_directory": "d:\\Downloads\\img_แนวข้อสอบ\\",
+  "source_images_batch": [
+    "Screen_Recording_20261014_033907_Google.jpg",
+    "Screen_Recording_20261014_033907_Google(1).jpg",
+    "Screen_Recording_20261014_033907_Google(2).jpg",
+    "Screen_Recording_20261014_033907_Google(3).jpg",
+    "Screen_Recording_20261014_033907_Google(4).jpg",
+    "Screen_Recording_20261014_033907_Google(5).jpg",
+    "Screen_Recording_20261014_033907_Google(6).jpg",
+    "Screen_Recording_20261014_033907_Google(7).jpg",
+    "Screen_Recording_20261014_033907_Google(8).jpg",
+    "Screen_Recording_20261014_033907_Google(9).jpg",
+    "Screen_Recording_20261014_033907_Google(10).jpg",
+    "Screen_Recording_20261014_033907_Google(11).jpg",
+    "Screen_Recording_20261014_033907_Google(12).jpg",
+    "Screen_Recording_20261014_033907_Google(13).jpg",
+    "Screen_Recording_20261014_033907_Google(14).jpg",
+    "Screen_Recording_20261014_033907_Google(15).jpg"
+  ],
+  "questions": [
+    {
+      "id": 4,
+      "label": "A",
+      "question_text": "ถ้านิสิตต้องการทำรายงานเรื่อง ขั้นตอนการผลิตกล้วยเบรกแตก ที่เป็นสินค้า OTOP ใครน่าจะเป็นผู้ให้ข้อมูลที่ดีที่สุด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "นักโภชนาการอาหาร",
+        "แพทย์ผู้เชี่ยวชาญด้านทางเดินอาหาร",
+        "เกษตรกรผู้ปลูกกล้วยออแกนนิค",
+        "แม่บ้านกลุ่มแปรรูปสินค้าด้านการเกษตร"
+      ],
+      "selected_answer": "แม่บ้านกลุ่มแปรรูปสินค้าด้านการเกษตร",
+      "topic": "แหล่งข้อมูลและผู้ให้ข้อมูลสารสนเทศ (Information Sources & Experts)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "label": "B",
+      "question_text": "ถ้าท่านต้องการค้นข้อมูลที่มีเนื้อหาทันสมัยที่สุด ควรค้นจากสารสนเทศประเภท",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "บทความในวารสาร",
+        "หนังสือ",
+        "สารานุกรม",
+        "พจนานุกรม"
+      ],
+      "selected_answer": "บทความในวารสาร",
+      "topic": "ประเภทของสารสนเทศและความทันสมัยของข้อมูล (Information Types & Currency)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "label": "C",
+      "question_text": "จงระบุประเภทของข้อมูลจากข้อมูลบรรณานุกรม\nBhadalung, N. 2005. Effects of Short-Term Fertilization on Diversity of Arbuscualr Mycorrhizal Fungi under a Maize Cropping System in Thailand. Ph.D. Thesis, Kasetsart University.",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "วิทยานิพนธ์",
+        "หนังสือ",
+        "บทความในวารสารวิชาการ",
+        "ฐานข้อมูล"
+      ],
+      "selected_answer": "วิทยานิพนธ์",
+      "topic": "การระบุประเภททรัพยากรสารสนเทศจากรายการบรรณานุกรม (Citation Identification / Theses)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(1).jpg",
+        "Screen_Recording_20261014_033907_Google(3).jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "label": "D",
+      "question_text": "แหล่งข้อมูลในข้อใดที่มีความน่าเชื่อถือมากที่สุด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "บทความในเว็บไซต์",
+        "บทความในวารสารรายปักษ์",
+        "บทความในหนังสือพิมพ์รายวัน",
+        "บทความในวารสารวิชาการ"
+      ],
+      "selected_answer": "บทความในวารสารวิชาการ",
+      "topic": "การประเมินความน่าเชื่อถือของแหล่งข้อมูล (Information Credibility & Peer Review)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(1).jpg",
+        "Screen_Recording_20261014_033907_Google(2).jpg",
+        "Screen_Recording_20261014_033907_Google(3).jpg",
+        "Screen_Recording_20261014_033907_Google(4).jpg",
+        "Screen_Recording_20261014_033907_Google(5).jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "label": "E",
+      "question_text": "หากต้องการค้นหาข้อมูลเพื่อใช้ทำรายงานในรายวิชาเฉพาะของสาขาของท่าน ควรเลือกใช้แหล่งสารสนเทศใด ที่มีความทันสมัยและน่าเชื่อถือที่สุด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "หนังสือ/ ตำราเรียน",
+        "นิตยสาร",
+        "บทความในวารสาร",
+        "บทความในเว็บไซต์"
+      ],
+      "selected_answer": "บทความในวารสาร",
+      "topic": "การเลือกแหล่งสารสนเทศสำหรับรายงานวิชาการเฉพาะสาขา (Academic Information Retrieval)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(2).jpg",
+        "Screen_Recording_20261014_033907_Google(4).jpg",
+        "Screen_Recording_20261014_033907_Google(5).jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "label": "F",
+      "question_text": "เราสามารถใช้ Wikipedia เป็นแหล่งข้อมูลทางด้านวิชาการได้หรือไม่ เพราะเหตุใด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "ใช้ได้ เพราะเป็นฐานข้อมูลทางวิชาการที่ได้รับการยอมรับ",
+        "ใช้ได้บางส่วน โดยอ้างอิงจากเอกสารวิชาการปฐมภูมิที่ปรากฏในบทความ",
+        "ใช้ได้ เพราะมีความน่าเชื่อถือ และมีผู้ตรวจสอบข้อมูล",
+        "ใช้ไม่ได้ เพราะเป็นแหล่งข้อมูลที่ไม่มีการตรวจสอบอย่างเป็นระบบ"
+      ],
+      "selected_answer": "ใช้ได้บางส่วน โดยอ้างอิงจากเอกสารวิชาการปฐมภูมิที่ปรากฏในบทความ",
+      "topic": "การใช้งานและการประเมินแหล่งข้อมูลวิกิพีเดีย (Evaluation and Academic Use of Wikipedia)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(5).jpg",
+        "Screen_Recording_20261014_033907_Google(6).jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "label": "G",
+      "question_text": "หากท่านต้องการหาข้อมูลเกี่ยวกับสงครามระหว่างประเทศอิสราเอล-กลุ่มฮามาส แหล่งสารสนเทศใดที่จะให้ข้อมูลที่ถูกต้องและเป็นปัจจุบันที่สุด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "บทความจากวารสารวิชาการ",
+        "เว็บไซต์สำนักข่าวออนไลน์",
+        "สื่อออนไลน์ของหน่วยงานรัฐ",
+        "หนังสือพิมพ์รายสัปดาห์"
+      ],
+      "selected_answer": "เว็บไซต์สำนักข่าวออนไลน์",
+      "topic": "แหล่งสารสนเทศสำหรับเหตุการณ์ปัจจุบันและข่าวสาร (Current Events Information Sources)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(6).jpg",
+        "Screen_Recording_20261014_033907_Google(7).jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "label": "H",
+      "question_text": "หากท่านต้องการสืบค้น วิทยานิพนธ์ของ มหาวิทยาลัยเชียงใหม่ ควรค้นจากเครื่องมือใดดีที่สุด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "WebOPAC ของมหาวิทยาลัยเกษตรศาสตร์",
+        "KU E-Thesis",
+        "ฐานข้อมูล TDC",
+        "Google"
+      ],
+      "selected_answer": "ฐานข้อมูล TDC",
+      "topic": "เครื่องมือสืบค้นวิทยานิพนธ์สถาบันอุดมศึกษาในไทย (ThaiLIS / TDC Database)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(7).jpg",
+        "Screen_Recording_20261014_033907_Google(8).jpg",
+        "Screen_Recording_20261014_033907_Google(9).jpg",
+        "Screen_Recording_20261014_033907_Google(10).jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "label": "I",
+      "question_text": "หากต้องทำรายงานในหัวข้อเรื่อง ผลกระทบของมลพิษทางอากาศในจังหวัดเชียงใหม่ที่มีต่อสุขภาพของประชากร มีคำสำคัญชุดใดที่ควรใช้ในการสืบค้น",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "บรรยากาศ มลพิษ ประชากร การเผาไหม้ขยะ",
+        "มลภาวะ ประชากร จังหวัด เชียงใหม่",
+        "ผลกระทบ คาร์บอนมอนนอกไซด์ ประชากร เชียงใหม่",
+        "อากาศ มลภาวะ สุขภาพ เชียงใหม่"
+      ],
+      "selected_answer": "อากาศ มลภาวะ สุขภาพ เชียงใหม่",
+      "topic": "การกำหนดคำสำคัญและกลยุทธ์ในการสืบค้นสารสนเทศ (Search Keywords Formulation)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(8).jpg",
+        "Screen_Recording_20261014_033907_Google(9).jpg",
+        "Screen_Recording_20261014_033907_Google(10).jpg",
+        "Screen_Recording_20261014_033907_Google(11).jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "label": "J",
+      "question_text": "หากต้องการสืบค้นข้อมูลที่เกี่ยวข้องกับคำว่า Sociological, Sociologically หรือ Sociologist ควรใช้คำหลักในข้อใด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "Soc*",
+        "Socio*",
+        "Sociolog*",
+        "Sociological"
+      ],
+      "selected_answer": "Sociolog*",
+      "topic": "เทคนิคการตัดคำในการสืบค้นสารสนเทศ (Truncation / Wildcard Technique)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(11).jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "label": "K",
+      "question_text": "หากต้องการสืบค้นรายการสารสนเทศประเภทหนังสือที่มีอยู่ในสำนักหอสมุด มหาวิทยาลัยเกษตรศาสตร์ ได้จากแหล่งใด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "ฐานข้อมูล TDC",
+        "WebOPAC ของมหาวิทยาลัยเกษตรศาสตร์"
+      ],
+      "selected_answer": "WebOPAC ของมหาวิทยาลัยเกษตรศาสตร์",
+      "topic": "เครื่องมือสืบค้นทรัพยากรสารสนเทศห้องสมุด (Library Catalog / WebOPAC)",
+      "note": "ในภาพ Screen_Recording_20261014_033907_Google(11).jpg ปรากฏตัวเลือก 2 ตัวเลือกเนื่องจากติดขอบล่างของหน้าจอ",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(11).jpg"
+      ]
+    },
+    {
+      "id": null,
+      "label": null,
+      "question_text": "[คำถามไม่ปรากฏในภาพ เลื่อนข้ามจากข้อ 14 (K) มายังส่วนท้ายของคำถามก่อนหน้าข้อ 18]",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "ท่านสืบค้นข้อมูลมากเกินกว่าปริมาณข้อมูลที่นิสิตแต่ละคนได้รับสิทธิให้ใช้ได้",
+        "ท่านไม่ได้เข้าระบบ All Login ของมหาวิทยาลัย จึงไม่สามารถยืนยันตัวตนกับฐานข้อมูลได้"
+      ],
+      "selected_answer": "ท่านไม่ได้เข้าระบบ All Login ของมหาวิทยาลัย จึงไม่สามารถยืนยันตัวตนกับฐานข้อมูลได้",
+      "topic": "การยืนยันตัวตนเข้าใช้งานฐานข้อมูลออนไลน์ของมหาวิทยาลัยเกษตรศาสตร์ (KU All Login Authentication)",
+      "note": "ปรากฏเฉพาะ 2 ตัวเลือกสุดท้ายที่ส่วนบนสุดของภาพ Screen_Recording_20261014_033907_Google(12).jpg",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(12).jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "label": "O",
+      "question_text": "สารสนเทศที่ค้นได้จาก https://kukr.lib.ku.ac.th ได้รับการประเมินว่ามีความน่าเชื่อถือเพราะเหตุใด",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "เป็นเว็บไซต์ที่มีจำนวนผู้เข้าชมจำนวนมาก",
+        "เป็นเว็บไซต์ที่มีคนรู้จักในวงกว้าง",
+        "เป็นเว็บไซต์ที่มีการปรับปรุงข้อมูลสม่ำเสมอ",
+        "เป็นเว็บไซต์ทางการที่จัดทำโดยสถาบันการศึกษา"
+      ],
+      "selected_answer": "เป็นเว็บไซต์ทางการที่จัดทำโดยสถาบันการศึกษา",
+      "topic": "การประเมินความน่าเชื่อถือของสารสนเทศบนเว็บไซต์สถาบันการศึกษา (Website Credibility & Authority)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(12).jpg",
+        "Screen_Recording_20261014_033907_Google(13).jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "label": "P",
+      "question_text": "ข้อใดไม่ใช่เกณฑ์ที่ใช้ในการประเมินความน่าเชื่อถือของแหล่งข้อมูลที่สืบค้นมาได้",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "ระบุวัตถุประสงค์ในการเผยแพร่ข้อมูล วันที่ปรับปรุงเนื้อหาครั้งล่าสุด",
+        "ใช้โดเมนเนมที่จดทะเบียนในประเทศที่น่าเชื่อถือ มีจำนวนผู้เข้าใช้เว็บไซต์จำนวนมาก",
+        "ระบุแหล่งที่มาของข้อมูลที่ชัดเจน มีช่องทางให้ผู้อ่านแสดงความคิดเห็น",
+        "มีข้อมูลผู้แต่งและผู้ดูแลเว็บไซต์ที่ชัดเจน เนื้อหาเว็บไซต์ไม่ขัดต่อกฎหมายศีลธรรม และจริยธรรม"
+      ],
+      "selected_answer": "ใช้โดเมนเนมที่จดทะเบียนในประเทศที่น่าเชื่อถือ มีจำนวนผู้เข้าใช้เว็บไซต์จำนวนมาก",
+      "topic": "เกณฑ์การประเมินความน่าเชื่อถือของแหล่งข้อมูลสารสนเทศ (Evaluation Criteria for Information Sources)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(12).jpg",
+        "Screen_Recording_20261014_033907_Google(13).jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "label": "Q",
+      "question_text": "ข้อใดเป็นสิ่งที่ควรนำมาใช้ในการประเมินสารสนเทศทั่วๆไป",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "ระบุชื่อผู้เขียนและวันเวลาที่เผยแพร่ชัดเจนและตรวจสอบได้ ข้อมูลมีความถูกต้องและทันสมัย",
+        "แหล่งเผยแพร่ข้อมูลได้รับความนิยมสูง ข้อมูลถูกนำไปอ้างอิงอย่างกว้างขวาง",
+        "แหล่งเผยแพร่ข้อมูลได้รับความนิยมสูง ผู้เขียนเป็นที่รู้จักของสังคมในวงกว้าง",
+        "ระบุชื่อผู้เขียนและวันเวลาที่เผยแพร่ชัดเจนและตรวจสอบได้ ข้อมูลมีความน่าสนใจ"
+      ],
+      "selected_answer": "ระบุชื่อผู้เขียนและวันเวลาที่เผยแพร่ชัดเจนและตรวจสอบได้ ข้อมูลมีความถูกต้องและทันสมัย",
+      "topic": "การประเมินสารสนเทศทั่วไป (General Information Evaluation)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(13).jpg",
+        "Screen_Recording_20261014_033907_Google(14).jpg",
+        "Screen_Recording_20261014_033907_Google(15).jpg"
+      ]
+    },
+    {
+      "id": 21,
+      "label": "R",
+      "question_text": "การพิจารณาเลือกหนังสือว่ามีเนื้อหาตรงกับความต้องการหรือไม่ ควรดูจาก",
+      "points": 1,
+      "question_type": "single_choice",
+      "options": [
+        "ดูหน้าสารบัญในเล่ม",
+        "มีคำที่ค้นหาปรากฏที่ชื่อเรื่องหรือชื่อหนังสือ",
+        "ดูบรรณานุกรมหรือแหล่งอ้างอิงท้ายเล่ม",
+        "ดูดัชนีหรือศัพท์ท้ายเล่ม"
+      ],
+      "selected_answer": "ดูหน้าสารบัญในเล่ม",
+      "topic": "การเลือกและประเมินเนื้อหาหนังสือให้ตรงกับความต้องการ (Book Selection & Table of Contents)",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(14).jpg",
+        "Screen_Recording_20261014_033907_Google(15).jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "label": "S",
+      "question_text": "ท่านได้รับมอบหมายให้สืบค้นหาคนที่มีอายุยืนยาวที่สุดในโลกที่ยังมีชีวิตอยู่ในปัจจุบัน ในการสืบค้นมีประเด็นใดบ้างที่ต้องระมัดระวัง (เลือกทุกข้อที่เกี่ยวข้อง)",
+      "points": 1,
+      "question_type": "multiple_choice",
+      "options": [
+        "ต้องมาจากวารสารวิชาการด้านมานุษยวิทยา",
+        "แหล่งที่มาของข้อมูลน่าเชื่อถือ",
+        "ให้ข้อมูลของผู้ทำการรวบรวมหรือสำรวจข้อมูล",
+        "ข้อมูลเป็นปัจจุบัน"
+      ],
+      "selected_answer": [
+        "แหล่งที่มาของข้อมูลน่าเชื่อถือ",
+        "ข้อมูลเป็นปัจจุบัน"
+      ],
+      "topic": "การประเมินความน่าเชื่อถือและความเป็นปัจจุบันของข้อมูลที่มีการเปลี่ยนแปลงตามกาลเวลา (Information Evaluation & Currency)",
+      "note": "ข้อคำถามเริ่มปรากฏที่ส่วนท้ายของภาพ Screen_Recording_20261014_033907_Google(15).jpg และเห็นตัวเลือกทั้งหมดอย่างสมบูรณ์ในเฟรมถัดไป",
+      "source_images": [
+        "Screen_Recording_20261014_033907_Google(15).jpg"
+      ]
+    }
+  ]
+}

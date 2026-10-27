@@ -58,7 +58,71 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- Tab Switching ---
+let currentActiveTab = 'exam';
+
+function updateMobileHeaderNav(tabName) {
+  const badge = document.getElementById('mobile-current-view-badge');
+  const quickTxt = document.getElementById('mobile-quick-switch-txt');
+  const quickIcon = document.getElementById('mobile-quick-switch-icon');
+
+  const badgeMap = {
+    exam: '🎯 จำลองสอบจริง',
+    notes: '📚 สรุปสาระความรู้',
+    biblab: '✨ แล็บบรรณานุกรม',
+    category: '📑 ฝึกแยกหมวด',
+    stats: '📊 สถิติ & ทบทวน'
+  };
+
+  if (badge && badgeMap[tabName]) {
+    badge.textContent = badgeMap[tabName];
+  }
+
+  if (quickTxt && quickIcon) {
+    if (tabName === 'exam') {
+      quickTxt.textContent = 'อ่านสรุป';
+      quickIcon.setAttribute('data-lucide', 'book-open');
+    } else {
+      quickTxt.textContent = 'ไปทำข้อสอบ';
+      quickIcon.setAttribute('data-lucide', 'target');
+    }
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  }
+}
+
+function toggleExamAndNotes() {
+  if (currentActiveTab === 'exam') {
+    switchTab('notes');
+  } else {
+    switchTab('exam');
+  }
+}
+
+function openMobileNavModal() {
+  const modal = document.getElementById('mobile-nav-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+  }
+}
+
+function closeMobileNavModal() {
+  const modal = document.getElementById('mobile-nav-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+
+function switchTabAndCloseNav(tabName) {
+  closeMobileNavModal();
+  switchTab(tabName);
+}
+
 function switchTab(tabName) {
+  currentActiveTab = tabName;
   const tabs = ['exam', 'category', 'biblab', 'notes', 'stats'];
   tabs.forEach(t => {
     const view = document.getElementById(`view-${t}`);
@@ -77,6 +141,9 @@ function switchTab(tabName) {
       }
     }
   });
+
+  // Update mobile header switch button & badge
+  updateMobileHeaderNav(tabName);
 
   // Toggle mobile floating exam bar
   const mobBar = document.getElementById('mobile-exam-sticky-bar');
