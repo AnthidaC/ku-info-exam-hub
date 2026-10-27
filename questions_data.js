@@ -147,7 +147,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "THAIJO (Thai Journals Online) เป็นระบบฐานข้อมูลวารสารอิเล็กทรอนิกส์กลางของประเทศไทยที่รวบรวมวารสารวิชาการที่ตีพิมพ์ในประเทศไทยทุกสาขาวิชา จัดการโดย TCI (ศูนย์ดัชนีการอ้างอิงวารสารไทย) ในขณะที่ UpToDate เป็นฐานข้อมูลการแพทย์ และ Passport GMID เป็นฐานข้อมูลข้อมูลการตลาดและสถิติธุรกิจระดับโลก",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_thaijo.png"
   },
   {
     "id": 11,
@@ -162,7 +163,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 2,
     "explanation": "CEIC (CEIC Data) เป็นฐานข้อมูลสถิติและข้อมูลเชิงลึกทางเศรษฐกิจ มหภาค การเงิน และตลาดทุนที่ครอบคลุมประเทศต่างๆ ทั่วโลก (Complete Anatomy คือโมเดลกายวิภาค 3 มิติ, CINAHL คือการพยาบาลและสหเวชศาสตร์, DOAB คือหนังสือ Open Access)",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_ceic.png"
   },
   {
     "id": 12,
@@ -177,7 +179,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 2,
     "explanation": "Stash (Stash Media) เป็นฐานข้อมูลและวิดีโออาร์ไคฟ์ออนไลน์ที่รวบรวมผลงาน visual effects, motion design และ animation projects จากนักออกแบบ ศิลปิน และสตูดิโอชั้นนำทั่วโลก (DynamicHealth เป็นฐานข้อมูลสุขภาพ/การพยาบาล, USP คือ Pharmacopeia มาตรฐานยา)",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_stash.png"
   },
   {
     "id": 13,
@@ -192,7 +195,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 1,
     "explanation": "WGSN (Worth Global Style Network) เป็นฐานข้อมูลพยากรณ์เทรนด์แฟชั่น การออกแบบ ไลฟ์สไตล์ และผู้บริโภค ไม่ใช่ฐานข้อมูลสำหรับค้นหาวิทยานิพนธ์ (ในขณะที่ EBSCO Open Dissertations, TDC ThaiLIS, และ KU E-Thesis ล้วนเป็นฐานข้อมูลวิทยานิพนธ์โดยตรง)",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_wgsn.png"
   },
   {
     "id": 14,
@@ -207,7 +211,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "IEEE Xplore Digital Library เป็นฐานข้อมูลงานวิจัยชั้นนำระดับโลกด้านวิศวกรรมศาสตร์ โดยเฉพาะวิศวกรรมไฟฟ้า อิเล็กทรอนิกส์ คอมพิวเตอร์ และเทคโนโลยี (UpToDate และ PubMed เป็นฐานข้อมูลการแพทย์, EconLit เป็นฐานข้อมูลเศรษฐศาสตร์)",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_ieee.png"
   },
   {
     "id": 15,
@@ -222,7 +227,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "ERIC (Education Resources Information Center) ดำเนินการโดย Institute of Education Sciences สหรัฐอเมริกา เป็นฐานข้อมูลด้านการศึกษา การเรียนการสอน และศึกษาศาสตร์/ครุศาสตร์ที่ใหญ่ที่สุด (EMIS เป็นด้านตลาดเกิดใหม่และเศรษฐกิจการลงทุน, WGSN เป็นด้านเทรนด์แฟชั่น, TCDC MATERIAL DATABASE เป็นฐานข้อมูลวัสดุการออกแบบ)",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_eric.png"
   },
   {
     "id": 16,
@@ -237,7 +243,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 0,
     "explanation": "ASM Journals (American Society for Microbiology) เป็นฐานข้อมูลวารสารด้านจุลชีววิทยาและวิทยาศาสตร์การแพทย์ จึงไม่เกี่ยวข้องกับด้านการจัดการ บริหาร เศรษฐศาสตร์ หรือการตลาด (ส่วน Emerald มีชื่อเสียงและเน้นหนักด้านการจัดการ บริหารธุรกิจ และการตลาด)",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_asm.png"
   },
   {
     "id": 17,
@@ -252,7 +259,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "National Geographic Virtual Library (โดยสำนักพิมพ์ Gale) เป็นฐานข้อมูลที่รวบรวมนิตยสาร National Geographic ย้อนหลังตั้งแต่ปี ค.ศ. 1888 จนถึงปัจจุบัน ตลอดจนหนังสือ แผนที่ รูปภาพ และวิดีโอทั้งหมดของสมาคม National Geographic Society",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_natgeo.png"
   },
   {
     "id": 18,
@@ -267,7 +275,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 1,
     "explanation": "Hibrary (ไฮบรารี่) เป็นแพลตฟอร์มและฐานข้อมูลหนังสืออิเล็กทรอนิกส์ (E-Book) ภาษาไทย สำหรับห้องสมุดสถาบันอุดมศึกษาและองค์กรต่างๆ ครอบคลุมหนังสือภาษาไทยหลากหลายสาขาวิชา (NEJM Evidence ด้านการแพทย์, Oxford Scholarship ด้านวิชาการภาษาอังกฤษ, Material ConneXion ด้านนวัตกรรมวัสดุ)",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_hibrary.png"
   },
   {
     "id": 19,
@@ -282,7 +291,8 @@ window.EXAM_QUESTIONS = [
     ],
     "answer": 3,
     "explanation": "Osmosis from Elsevier เป็นแพลตฟอร์มการเรียนรู้ทางการแพทย์ที่ออกแบบมาสำหรับหลักสูตรแพทยศาสตร์บัณฑิตโดยเฉพาะ ครอบคลุมเนื้อหารายวิชาทั้งชั้นปรีคลินิก (Basic Medical Sciences เช่น Anatomy, Physiology, Pathology, Pharmacology) และชั้นคลินิก (Clinical Sciences/Rotations) ผ่านวิดีโอแอนิเมชัน แฟลชการ์ด และข้อสอบแบบจำลอง",
-    "tag": "แนวข้อสอบในห้องเรียน"
+    "tag": "แนวข้อสอบในห้องเรียน",
+    "image": "assets/exam_images/clean_logo_osmosis.png"
   },
   {
     "id": 20,
@@ -318,7 +328,7 @@ window.EXAM_QUESTIONS = [
     "id": 22,
     "category": "bib",
     "categoryName": "บรรณานุกรมและการอ้างอิง",
-    "question": "จงระบุประเภทของข้อมูลจากข้อมูลบรรณานุกรม\nBhadalung, N. 2005. Effects of Short-Term Fertilization on Diversity of Arbuscualr Mycorrhizal Fungi under a Maize Cropping System in Thailand. Ph.D. Thesis, Kasetsart University.",
+    "question": "จงระบุประเภทของข้อมูลจากข้อมูลบรรณานุกรม\nBhadalung, N. 2005. *Effects of Short-Term Fertilization on Diversity of Arbuscular Mycorrhizal Fungi under a Maize Cropping System in Thailand*. Ph.D. Thesis, Kasetsart University.",
     "options": [
       "วิทยานิพนธ์",
       "หนังสือ",
@@ -1011,13 +1021,13 @@ window.EXAM_QUESTIONS = [
     "categoryName": "บรรณานุกรมและการอ้างอิง",
     "question": "รูปแบบการอ้างอิงท้ายเรื่องสำหรับ 'บทความในวารสาร' (Journal Article) ข้อใดระบุส่วนประกอบได้ถูกต้อง ?",
     "options": [
-      "ผู้เขียนบทความ. (ปี). ชื่อบทความ. ชื่อวารสาร, ปีที่(ฉบับที่), เลขหน้า. DOI/URL",
+      "ผู้เขียนบทความ. (ปี). ชื่อบทความ. *ชื่อวารสาร*, *ปีที่*(ฉบับที่), เลขหน้า. DOI/URL",
       "ชื่อวารสาร. (ปี). ชื่อบทความ. ผู้เขียน, ปีที่(ฉบับที่), เลขหน้า.",
       "ผู้เขียนบทความ. ชื่อบทความ. (ปี). สำนักพิมพ์. ชื่อวารสาร, เลขหน้า.",
       "ผู้เขียนบทความ. (ปี). ชื่อวารสาร. ชื่อบทความ, สำนักพิมพ์."
     ],
     "answer": 0,
-    "explanation": "โครงสร้างบรรณานุกรมวารสาร: ชื่อผู้แต่ง. (ปีพิมพ์). ชื่อบทความ. ชื่อวารสาร (ตัวเอียง), ปีที่(ตัวเอียง)(ฉบับที่), เลขหน้าเริ่มต้น-สิ้นสุด. https://doi.org/...",
+    "explanation": "โครงสร้างบรรณานุกรมวารสาร: ชื่อผู้แต่ง. (ปีพิมพ์). ชื่อบทความ. *ชื่อวารสาร* (ตัวเอียง), *ปีที่*(ตัวเอียง)(ฉบับที่), เลขหน้าเริ่มต้น-สิ้นสุด. https://doi.org/... เช่น ธัญนาฏ ญาณพิบูลย์ และคณะ. (2563). ความสามารถ... *จุฬาลงกรณ์ธุรกิจปริทัศน์*, *42*(2), 54-72.",
     "tag": "เจาะลึกบรรณานุกรม"
   },
   {
@@ -1032,7 +1042,7 @@ window.EXAM_QUESTIONS = [
       "ใน บรรณาธิการ ยุทธนา ลิลา, ..."
     ],
     "answer": 1,
-    "explanation": "ภาษาไทยใช้อักษรย่อ '(บ.ก.)' หรือ '(คณะ บ.ก.)' ไว้ท้ายชื่อ เช่น 'ใน ยุทธนา ลิลา และคณะ (บ.ก.), ชื่อหนังสือ...' สำหรับภาษาอังกฤษใช้ 'In E. Author & F. Author (Eds.), Book title...'",
+    "explanation": "ภาษาไทยใช้อักษรย่อ '(บ.ก.)' หรือ '(คณะ บ.ก.)' ไว้ท้ายชื่อ เช่น 'ใน ยุทธนา ลิลา และคณะ (บ.ก.), *คณิตศาสตร์สำหรับเทคโนโลยีสารสนเทศและการสื่อสาร* (น. 50-55). สำนักพิมพ์มหาวิทยาลัยสุโขทัยธรรมาธิราช.' สำหรับภาษาอังกฤษใช้ 'In E. Author & F. Author (Eds.), *Book title*...'",
     "tag": "เจาะลึกบรรณานุกรม"
   },
   {
@@ -1047,7 +1057,7 @@ window.EXAM_QUESTIONS = [
       "[Unpublished Paper]"
     ],
     "answer": 0,
-    "explanation": "สำหรับวิทยานิพนธ์ที่ไม่ได้ตีพิมพ์เป็นเล่มเผยแพร่ทั่วไป ให้ระบุในวงเล็บเหลี่ยมว่า '[วิทยานิพนธ์ปริญญามหาบัณฑิตไม่ได้ตีพิมพ์]' หรือ '[วิทยานิพนธ์ปริญญาดุษฎีบัณฑิตไม่ได้ตีพิมพ์]' ต่อท้ายชื่อเรื่อง และตามด้วยชื่อสถาบันการศึกษา",
+    "explanation": "สำหรับวิทยานิพนธ์ที่ไม่ได้ตีพิมพ์เป็นเล่มเผยแพร่ทั่วไป ให้ระบุในวงเล็บเหลี่ยมว่า '[วิทยานิพนธ์ปริญญามหาบัณฑิตไม่ได้ตีพิมพ์]' ต่อท้ายชื่อเรื่อง เช่น ธันทิวา ภักดีภัทรากร. (2563). *การพัฒนาเกมอาหารล้านนา* [วิทยานิพนธ์ปริญญามหาบัณฑิตไม่ได้ตีพิมพ์]. มหาวิทยาลัยเชียงใหม่.",
     "tag": "เจาะลึกบรรณานุกรม"
   },
   {
@@ -1086,13 +1096,13 @@ window.EXAM_QUESTIONS = [
     "categoryName": "บรรณานุกรมและการอ้างอิง",
     "question": "การอ้างอิงภาพหรือแผนที่ในรายงาน (Figure citation) ข้อใดเป็นรูปแบบที่ถูกต้องใต้ภาพ ?",
     "options": [
-      "หมายเหตุ. ภาพแสดงที่ตั้งของรัสเซีย. จาก Russia, โดย J. C. Dewdney, 2021, (URL)",
+      "หมายเหตุ. ภาพแสดงที่ตั้งของรัสเซีย. จาก *Russia*, โดย J. C. Dewdney, 2021, (URL)",
       "ที่มา: อินเทอร์เน็ต (www.google.com)",
       "ภาพจาก: J. C. Dewdney, Russia, 2021",
       "Reference: Russia by J. C. Dewdney (2021)"
     ],
     "answer": 0,
-    "explanation": "การอ้างอิงใต้ภาพ/ตารางตามแบบ APA 7th ขึ้นต้นด้วย 'หมายเหตุ.' (Note.) ตามด้วยคำอธิบายภาพ 'จาก [ชื่อผลงาน], โดย [ผู้สร้างสรรค์], [ปี], [URL/แหล่งเผยแพร่]'",
+    "explanation": "การอ้างอิงใต้ภาพ/ตารางตามแบบ APA 7th ขึ้นต้นด้วย 'หมายเหตุ.' (Note.) ตามด้วยคำอธิบายภาพ 'จาก *[ชื่อผลงานตัวเอียง]*, โดย [ผู้สร้างสรรค์], [ปี], [URL/แหล่งเผยแพร่]'",
     "tag": "เจาะลึกบรรณานุกรม"
   },
   {
@@ -1467,7 +1477,7 @@ window.EXAM_QUESTIONS = [
       "ชื่อสำนักพิมพ์ และ วันที่สืบค้น"
     ],
     "answer": 1,
-    "explanation": "ใน APA 7th สิ่งที่ต้องทำตัวเอียงสำหรับวารสารคือ 'ชื่อวารสาร' และ 'เลขปีที่ (Volume)' ส่วนเลขฉบับที่ในวงเล็บ (Issue) และเลขหน้า ให้พิมพ์ด้วยตัวตรงปกติ เช่น วารสารวิชาการ, 15(2), 45-60.",
+    "explanation": "ตามหลัก APA 7th ในบทความวารสาร ส่วนที่ต้องทำตัวเอียงคือ *ชื่อวารสาร* และ *เลขปีที่ (Volume Number)* ส่วนชื่อบทความและเลขฉบับที่ในวงเล็บให้พิมพ์ด้วยตัวตรงปกติ เช่น *จุฬาลงกรณ์ธุรกิจปริทัศน์*, *42*(2), 54-72.",
     "tag": "เจาะลึกบรรณานุกรม"
   },
   {
@@ -1476,13 +1486,13 @@ window.EXAM_QUESTIONS = [
     "categoryName": "บรรณานุกรมและการอ้างอิง",
     "question": "จากข้อมูลหน้าปกและหน้าลิขสิทธิ์ของหนังสือจริงในภาพ จงเลือกลักษณะการเขียนรายการบรรณานุกรมตามมาตรฐาน APA Style 7th Edition ที่ถูกต้อง",
     "options": [
-      "อนุพันธ์ นิตินัย. 2555. ตำนาน 77 จังหวัด. กรุงเทพฯ: บริษัท ไทยควอลิตี้บุ๊คส์ (2006) จำกัด.",
-      "อนุพันธ์ นิตินัย. (2555). ตำนาน 77 จังหวัด. ไทยควอลิตี้บุ๊คส์.",
-      "นิตินัย, อนุพันธ์. (2555). ตำนาน 77 จังหวัด. ไทยควอลิตี้บุ๊คส์.",
-      "อนุพันธ์ นิตินัย. (2555). \"ตำนาน 77 จังหวัด\" (พิมพ์ครั้งที่ 1). กรุงเทพฯ: ไทยควอลิตี้บุ๊คส์."
+      "อนุพันธ์ นิตินัย. 2555. *ตำนาน 77 จังหวัด*. กรุงเทพฯ: บริษัท ไทยควอลิตี้บุ๊คส์ (2006) จำกัด.",
+      "อนุพันธ์ นิตินัย. (2555). *ตำนาน 77 จังหวัด*. ไทยควอลิตี้บุ๊คส์.",
+      "นิตินัย, อนุพันธ์. (2555). *ตำนาน 77 จังหวัด*. ไทยควอลิตี้บุ๊คส์.",
+      "อนุพันธ์ นิตินัย. (2555). \"*ตำนาน 77 จังหวัด*\" (พิมพ์ครั้งที่ 1). กรุงเทพฯ: ไทยควอลิตี้บุ๊คส์."
     ],
     "answer": 1,
-    "explanation": "ตามมาตรฐาน APA Style 7th Edition: 1) ผู้แต่งชาวไทยลงชื่อ-สกุลตามลำดับปกติ 2) ปีพิมพ์อยู่ในวงเล็บ (2555). 3) ชื่อหนังสือพิมพ์ด้วยตัวเอียง 4) ตัดสถานที่พิมพ์ออก (ไม่ต้องใส่ กรุงเทพฯ ตามเกณฑ์ฉบับที่ 7) 5) ใส่ชื่อสำนักพิมพ์สั้นกระชับโดยตัดคำว่า บริษัท/จำกัด ออก และพิมพ์ครั้งที่ 1 ไม่ต้องระบุ",
+    "explanation": "ตามมาตรฐาน APA Style 7th Edition: 1) ผู้แต่งชาวไทยลงชื่อ-สกุลตามลำดับปกติ 2) ปีพิมพ์อยู่ในวงเล็บ (2555). 3) ชื่อหนังสือ *ตำนาน 77 จังหวัด* ต้องพิมพ์ด้วยตัวเอียง 4) ตัดสถานที่พิมพ์ออก (ไม่ต้องใส่ กรุงเทพฯ ตามเกณฑ์ฉบับที่ 7) 5) ใส่ชื่อสำนักพิมพ์สั้นกระชับโดยตัดคำว่า บริษัท/จำกัด ออก และพิมพ์ครั้งที่ 1 ไม่ต้องระบุ",
     "tag": "เจาะลึกบรรณานุกรม",
     "image": "assets/exam_images/book_cover_tumnan77.png"
   },
@@ -1582,13 +1592,13 @@ window.EXAM_QUESTIONS = [
     "categoryName": "บรรณานุกรมและการอ้างอิง",
     "question": "จากข้อมูลหน้าปกและหน้าลิขสิทธิ์ของหนังสือภาษาอังกฤษในภาพ จงเลือกลักษณะการเขียนรายการบรรณานุกรมตามมาตรฐาน APA Style 7th Edition ที่ถูกต้อง",
     "options": [
-      "Lynne M. Jackson. (2019). The Psychology of Prejudice: From attitudes to social action. Washington, DC: American Psychological Association.",
-      "Jackson, L. M. (2019). The psychology of prejudice: From attitudes to social action (2nd ed.). American Psychological Association. https://doi.org/10.1037/0000168-000",
-      "Jackson, Lynne M. 2019. The Psychology of Prejudice. American Psychological Association.",
-      "Jackson, L. M. (2019). The psychology of prejudice (2nd ed.). Washington, DC: American Psychological Association."
+      "Lynne M. Jackson. (2019). *The Psychology of Prejudice: From attitudes to social action*. Washington, DC: American Psychological Association.",
+      "Jackson, L. M. (2019). *The psychology of prejudice: From attitudes to social action* (2nd ed.). American Psychological Association. https://doi.org/10.1037/0000168-000",
+      "Jackson, Lynne M. 2019. *The Psychology of Prejudice*. American Psychological Association.",
+      "Jackson, L. M. (2019). *The psychology of prejudice* (2nd ed.). Washington, DC: American Psychological Association."
     ],
     "answer": 1,
-    "explanation": "ตามมาตรฐาน APA Style 7th Edition: 1) ผู้แต่งชาวต่างชาติต้องกลับชื่อสกุลขึ้นก่อน ตามด้วยอักษรย่อชื่อต้น \"Jackson, L. M.\" 2) ปีพิมพ์ในวงเล็บ (2019). 3) ชื่อหนังสือพิมพ์ด้วยตัวเอียงและใช้ Sentence case 4) ระบุครั้งที่พิมพ์ (2nd ed.) ในวงเล็บตัวตรงต่อจากชื่อเรื่อง 5) ตัดสถานที่พิมพ์ (Washington, DC) ออก และใส่ชื่อสำนักพิมพ์ 6) ใส่ลิงก์ DOI เป็นรูปแบบ URL เต็ม",
+    "explanation": "ตามมาตรฐาน APA Style 7th Edition: 1) ผู้แต่งชาวต่างชาติต้องกลับชื่อสกุลขึ้นก่อน 'Jackson, L. M.' 2) ปีพิมพ์ในวงเล็บ (2019). 3) ชื่อหนังสือ *The psychology of prejudice: From attitudes to social action* ต้องพิมพ์ด้วยตัวเอียงและใช้ Sentence case 4) ระบุครั้งที่พิมพ์ (2nd ed.) ในวงเล็บตัวตรงต่อจากชื่อเรื่อง 5) ตัดสถานที่พิมพ์ (Washington, DC) ออก และใส่ชื่อสำนักพิมพ์ 6) ใส่ลิงก์ DOI เป็นรูปแบบ URL เต็ม",
     "tag": "แบบฝึกหัดจากหน้าปกจริง",
     "image": "assets/exam_images/book_cover_jackson.png"
   }

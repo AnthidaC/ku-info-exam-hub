@@ -67,6 +67,13 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* Academic Bibliography Italics & Slanted Display */
+.academic-italic, em, i, .italic {
+  font-style: italic !important;
+  font-family: inherit;
+  color: inherit;
+}
+
 /* Headings with Apple-tight negative tracking */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family);

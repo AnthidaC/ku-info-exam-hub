@@ -232,7 +232,7 @@ function renderCurrentQuestion() {
   }
 
   // Question Text
-  document.getElementById('q-text').textContent = q.question;
+  document.getElementById('q-text').innerHTML = formatAcademicText(q.question);
 
   // Question Image Handling
   const imgContainer = document.getElementById('q-image-container');
@@ -263,7 +263,7 @@ function renderCurrentQuestion() {
     const letterLabel = letters[optIdx] || `${optIdx + 1}`;
     btn.innerHTML = `
       <span class="option-badge">${letterLabel}</span>
-      <span class="flex-grow">${escapeHtml(optText)}</span>
+      <span class="flex-grow">${formatAcademicText(optText)}</span>
     `;
 
     // Apply selection / result states
@@ -287,7 +287,7 @@ function renderCurrentQuestion() {
   const expText = document.getElementById('q-explanation-text');
 
   if (examSubmitted || (instantFeedback && isAnswered)) {
-    expText.textContent = q.explanation || 'ไม่มีคำอธิบายเพิ่มเติมสำหรับข้อนี้';
+    expText.innerHTML = formatAcademicText(q.explanation || 'ไม่มีคำอธิบายเพิ่มเติมสำหรับข้อนี้');
     expBox.classList.remove('hidden');
   } else {
     expBox.classList.add('hidden');
@@ -812,7 +812,7 @@ function renderBibLabOrdering() {
     el.className = 'drag-item';
     el.id = `piece-${p.id}`;
     el.innerHTML = `
-      <span class="font-medium text-sm text-[#1d1d1f]">${escapeHtml(p.text)}</span>
+      <span class="font-medium text-sm text-[#1d1d1f]">${formatAcademicText(p.text)}</span>
       <span class="text-xs px-2 py-0.5 rounded bg-neutral-100 text-neutral-500 font-mono select-none" id="order-seq-${p.id}">คลิกเพื่อเลือก</span>
     `;
     el.onclick = () => togglePieceSelection(p.id);
@@ -882,7 +882,7 @@ function checkOrderingAnswer() {
         <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
         <span>ยอดเยี่ยม! เรียงลำดับส่วนประกอบได้ถูกต้องสมบูรณ์</span>
       </div>
-      <p class="text-xs text-emerald-700">${escapeHtml(item.explanation)}</p>
+      <p class="text-xs text-emerald-700">${formatAcademicText(item.explanation)}</p>
     `;
   } else {
     box.className = 'block p-4 rounded-xl mb-4 bg-red-50 border border-red-200 text-red-900 text-sm';
@@ -891,7 +891,7 @@ function checkOrderingAnswer() {
         <i data-lucide="x-circle" class="w-4 h-4 text-red-600"></i>
         <span>ลำดับยังไม่ถูกต้อง ลองตรวจสอบและเรียงใหม่อีกครั้ง</span>
       </div>
-      <p class="text-xs text-red-700">${escapeHtml(item.explanation)}</p>
+      <p class="text-xs text-red-700">${formatAcademicText(item.explanation)}</p>
     `;
   }
 
@@ -917,7 +917,7 @@ function renderBibLabSpotMistakes() {
       optsHtml += `
         <button onclick="checkSpotAnswer('${item.id}', ${oIdx})" id="spot-opt-${item.id}-${oIdx}" class="option-btn text-xs py-2.5 px-3">
           <span class="option-badge text-xs w-6 h-6">${oIdx + 1}</span>
-          <span>${escapeHtml(opt)}</span>
+          <span>${formatAcademicText(opt)}</span>
         </button>
       `;
     });
@@ -930,17 +930,17 @@ function renderBibLabSpotMistakes() {
       <div>
         <div class="text-xs text-neutral-500 font-semibold mb-1">ตัวอย่างรายการอ้างอิงที่มีจุดผิด:</div>
         <div class="p-3.5 bg-neutral-50 border border-neutral-200 rounded-xl font-mono text-xs text-neutral-800 leading-relaxed select-all">
-          ${escapeHtml(item.bad_citation)}
+          ${formatAcademicText(item.bad_citation)}
         </div>
       </div>
       <div>
-        <h4 class="font-bold text-sm text-[#1d1d1f] mb-3">${escapeHtml(item.question)}</h4>
+        <h4 class="font-bold text-sm text-[#1d1d1f] mb-3">${formatAcademicText(item.question)}</h4>
         <div class="space-y-2">
           ${optsHtml}
         </div>
       </div>
       <div id="spot-feedback-${item.id}" class="hidden explanation-box text-xs">
-        ${escapeHtml(item.explanation)}
+        ${formatAcademicText(item.explanation)}
       </div>
     `;
 
@@ -1214,11 +1214,11 @@ function updateStatsDashboard() {
           <span class="badge-tag">${escapeHtml(q.categoryName)}</span>
           <span class="text-xs text-red-600 font-semibold">ข้อที่ ${q.id}</span>
         </div>
-        <h4 class="font-bold text-sm text-[#1d1d1f]">${escapeHtml(q.question)}</h4>
+        <h4 class="font-bold text-sm text-[#1d1d1f]">${formatAcademicText(q.question)}</h4>
         <div class="text-xs text-emerald-800 font-semibold bg-emerald-50 p-2 rounded border border-emerald-200">
-          ✓ คำตอบที่ถูกต้อง: ${escapeHtml(q.options[q.answer])}
+          ✓ คำตอบที่ถูกต้อง: ${formatAcademicText(q.options[q.answer])}
         </div>
-        <p class="text-xs text-neutral-600 pt-1 border-t border-red-100">${escapeHtml(q.explanation)}</p>
+        <p class="text-xs text-neutral-600 pt-1 border-t border-red-100">${formatAcademicText(q.explanation)}</p>
       `;
       container.appendChild(item);
     });
@@ -1254,4 +1254,24 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
+}
+
+function formatAcademicText(str) {
+  if (!str) return '';
+  let html = String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+    .replace(/&lt;em&gt;/gi, '<em class="academic-italic">')
+    .replace(/&lt;\/em&gt;/gi, '</em>')
+    .replace(/&lt;i&gt;/gi, '<i class="academic-italic">')
+    .replace(/&lt;\/i&gt;/gi, '</i>')
+    .replace(/&lt;b&gt;/gi, '<b>')
+    .replace(/&lt;\/b&gt;/gi, '</b>')
+    .replace(/\*\*([^\*\n]+)\*\*/g, '<b>$1</b>')
+    .replace(/\*([^\*\n]+)\*/g, '<em class="academic-italic">$1</em>')
+    .replace(/\n/g, '<br>');
+  return html;
 }
