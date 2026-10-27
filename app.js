@@ -28,8 +28,9 @@ let currentOrderSelected = []; // array of piece ids
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
   // Load data
-  if (window.EXAM_QUESTIONS && window.EXAM_QUESTIONS.length > 0) {
-    allQuestions = window.EXAM_QUESTIONS;
+  const qData = window.EXAM_QUESTIONS || window.QUESTIONS_DATA;
+  if (qData && qData.length > 0) {
+    allQuestions = qData;
   } else {
     console.error('Questions data not loaded');
   }

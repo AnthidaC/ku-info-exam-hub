@@ -1,4 +1,4 @@
-window.QUESTIONS_DATA = [
+window.EXAM_QUESTIONS = window.QUESTIONS_DATA = [
   {
     "id": 1,
     "category": "bib",
